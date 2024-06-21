@@ -7,13 +7,13 @@ export function Projects() {
   return (
     <>
       <div
-        className={`px-4 md:px-40 flex justify-center md:relative md:justify-start font-bold mt-20 text-3xl md:text-5xl mb-5`}
+        className={`px-4 sm:px-20 md:px-40 flex justify-center lg:relative xl:justify-start font-bold mt-20 text-3xl md:text-5xl mb-5`}
       >
         Projects
       </div>
       <div className="grid px-4 lg:px-0 grid-cols-1 lg:grid-cols-3 gap-4 lg:max-w-[1120px] mx-auto w-full">
         <WobbleCard
-          containerClassName="col-span-1 lg:col-span-2 h-full bg-pink-800 min-h-[500px] md:min-h-[400px] lg:min-h-[300px]"
+          containerClassName="col-span-1 lg:col-span-2 h-full bg-[#10172A]  min-h-[500px] md:min-h-[400px] lg:min-h-[300px]"
           className=""
         >
           <div className="max-w-xs">
@@ -36,7 +36,7 @@ export function Projects() {
             className="absolute -right-14 md:-right-[17%] lg:-right-[15x%] md:-bottom-32 grayscale filter mt-3 lg:-bottom-24 object-contain rounded-2xl"
           />
         </WobbleCard>
-        <WobbleCard containerClassName="col-span-1 min-h-[300px]">
+        <WobbleCard containerClassName="bg-[#10172A] col-span-1 min-h-[300px]">
           <h2 className="max-w-80  text-left text-balance text-base md:text-xl lg:text-3xl font-semibold tracking-[-0.015em] text-white">
             Multiple-user Shared Whiteboard Desktop Application
           </h2>
@@ -47,18 +47,18 @@ export function Projects() {
             Systems of my Master of IT Course at University of Melbourne.
           </p>
         </WobbleCard>
-        <WobbleCard containerClassName="col-span-1 lg:col-span-3 bg-blue-900 min-h-[500px] md:min-h-[400px] lg:min-h-[300px] xl:min-h-[300px]">
+        <WobbleCard containerClassName="col-span-1 lg:col-span-3 bg-[#10172A]  min-h-[500px] md:min-h-[400px] lg:min-h-[300px] xl:min-h-[300px]">
           <div className="max-w-sm">
             <h2 className="max-w-sm md:max-w-lg  text-left text-balance text-base md:text-xl lg:text-3xl font-semibold tracking-[-0.015em] text-white">
               Final Year Software Project
             </h2>
             <p className="mt-4 max-w-[26rem] text-left  text-base/6 text-neutral-200">
-              Designed and built a full-stack application for a Basketball
-              Team in Australia using React.js, Redux Toolkit, Express.js,
-              Bootstrap and MongoDB. Deployed the full-stack application to
-              AWS EC2 and set up GitHub CI/CD workflow. Set up Firebase and
-              MongoDB. Wrote testing scripts using React Testing Library and
-              Jest. Designed website UI using Figma. Adopted Scrum Methodology.
+              Designed and built a full-stack application for a Basketball Team
+              in Australia using React.js, Redux Toolkit, Express.js, Bootstrap
+              and MongoDB. Deployed the full-stack application to AWS EC2 and
+              set up GitHub CI/CD workflow. Set up Firebase and MongoDB. Wrote
+              testing scripts using React Testing Library and Jest. Designed
+              website UI using Figma. Adopted Scrum Methodology.
             </p>
           </div>
           <Image

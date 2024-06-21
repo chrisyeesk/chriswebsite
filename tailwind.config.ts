@@ -1,16 +1,21 @@
 import type { Config } from 'tailwindcss';
+import fluid, { extract } from 'fluid-tailwind';
+
 const {
   default: flattenColorPalette,
-} = require("tailwindcss/lib/util/flattenColorPalette");
+} = require('tailwindcss/lib/util/flattenColorPalette');
 
 const config = {
   darkMode: ['class'],
-  content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
-  ],
+  content: {
+    files: [
+      './pages/**/*.{ts,tsx}',
+      './components/**/*.{ts,tsx}',
+      './app/**/*.{ts,tsx}',
+      './src/**/*.{ts,tsx}',
+    ],
+    extract,
+  },
   prefix: '',
   theme: {
     container: {
@@ -87,7 +92,7 @@ const config = {
       },
     },
   },
-  plugins: [addVariablesForColors, require('tailwindcss-animate')],
+  plugins: [addVariablesForColors, require('tailwindcss-animate'), fluid],
 } satisfies Config;
 
 function addVariablesForColors({ addBase, theme }: any) {

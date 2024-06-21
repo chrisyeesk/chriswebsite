@@ -197,11 +197,11 @@ export function Certificates() {
   return (
     <>
       <div
-        className={`px-4 md:px-40 flex justify-center md:relative md:justify-start font-bold mt-20 text-3xl md:text-5xl mb-5`}
-      >
+        className={`px-4 sm:px-20 md:px-40 flex justify-center lg:relative xl:justify-start font-bold mt-20 text-3xl md:text-5xl mb-5`}
+        >
         Certificates
       </div>
-      <div className="px-4 lg:px-36">
+      <div className="px-4 lg:px-40">
         <StickyScroll content={content} />
       </div>
     </>
