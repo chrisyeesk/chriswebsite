@@ -1,7 +1,11 @@
 'use client';
+
 import React from 'react';
 import { StickyScroll } from '@/components/ui/sticky-scroll-reveal';
 import Image from 'next/image';
+import { useRef } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { useSectionInView } from '@/lib/hooks';
 
 const content = [
   {
@@ -185,7 +189,7 @@ const content = [
   {
     title: 'End of the list',
     description:
-      "I am committed to life-long learning and I consistently upskill myself to stay relevant in the tech industry.",
+      'I am committed to life-long learning and I consistently upskill myself to stay relevant in the tech industry.',
     content: (
       <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white">
         Running out of content
@@ -194,15 +198,41 @@ const content = [
   },
 ];
 export function Certificates() {
+  const { ref } = useSectionInView('Certificates');
+
+  const refScroll = useRef<HTMLDivElement>(null);
+  const scrollYProgress = useScroll({
+    target: refScroll,
+    offset: ['0 1', '1.33 1'],
+  });
+  const scaleProgress = useTransform(
+    scrollYProgress.scrollYProgress,
+    [0, 1],
+    [0.93, 1]
+  );
+  const opacityProgress = useTransform(
+    scrollYProgress.scrollYProgress,
+    [0, 1],
+    [0.8, 1]
+  );
   return (
     <>
-      <div
-        className={`px-4 sm:px-20 md:px-40 flex justify-center lg:relative xl:justify-start font-bold mt-20 text-3xl md:text-5xl mb-5`}
+      <div ref={ref}>
+        <motion.div
+          ref={refScroll}
+          style={{ scale: scaleProgress, opacity: opacityProgress }}
+          id="certificates"
+          className="scroll-mt-28"
         >
-        Certificates
-      </div>
-      <div className="px-4 lg:px-40">
-        <StickyScroll content={content} />
+          <div
+            className={`px-4 sm:px-20 md:px-40 flex justify-center lg:relative xl:justify-start font-bold text-3xl md:text-5xl mb-5`}
+          >
+            Certificates
+          </div>
+          <div className="px-4 lg:px-40">
+            <StickyScroll content={content} />
+          </div>
+        </motion.div>
       </div>
     </>
   );

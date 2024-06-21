@@ -1,7 +1,8 @@
 import { Certificates } from './components/Certificates';
 import { Education } from './components/Education';
-import { Experience } from './components/Experience';
+import Experiences from './components/Experiences';
 import { Projects } from './components/Projects';
+import Testing from './components/Testing';
 // import { PersonalPhoto } from './components/PersonalPhoto';
 import Introduction from './components/introduction';
 import { TestimonyCards } from './components/testimonyCards';
@@ -18,9 +19,8 @@ export default function Home() {
       className={`${manrope.className} flex text-GeistSans min-h-screen max-w-screen-2xl flex-col`}
     >
       <Introduction />
-      {/* <PersonalPhoto /> */}
       <TestimonyCards />
-      <Experience />
+      <Experiences />
       <Projects />
       <Certificates />
       <Education />

@@ -1,14 +1,22 @@
+'use client';
 import React from 'react';
 import localFont from '@next/font/local';
 import { LinkPreview } from '@/components/ui/link-preview';
+import { useSectionInView } from '@/lib/hooks';
 
 const playwrite = localFont({ src: './font/playwrite.woff2' });
-const roboto = localFont({ src: './font/roboto.woff2' });
+// const roboto = localFont({ src: './font/roboto.woff2' });
 // const cormorant = localFont({ src: 'cormorant.woff2' });
 
 const Introduction = () => {
+  const { ref } = useSectionInView('Home');
+
   return (
-    <section className="h-screen flex flex-col justify-center px-20 lg:px-40 pb-20">
+    <section
+      ref={ref}
+      id="home"
+      className="h-screen flex flex-col justify-center px-20 lg:px-40 pb-20"
+    >
       {/* <AnimatedText
         text={"Chris'"}
         type={'paragraph'}
@@ -16,7 +24,7 @@ const Introduction = () => {
       /> */}
       <div className="">
         <div
-          className={`${playwrite.className} text-5xl md:text-8xl mt-12 mb-1`}
+          className={`${playwrite.className} text-5xl md:text-8xl mt-20 mb-1`}
         >
           Chris'
         </div>
@@ -41,23 +49,29 @@ const Introduction = () => {
         >
           Framer Motion
         </LinkPreview>
-        ,{' '}<LinkPreview
+        ,{' '}
+        <LinkPreview
           url="https://www.langchain.com/"
           className="font-bold bg-clip-text text-transparent bg-gradient-to-br from-purple-500 to-pink-500"
         >
           Langchain
-        </LinkPreview>,{' '}<LinkPreview
+        </LinkPreview>
+        ,{' '}
+        <LinkPreview
           url="https://openai.com/index/openai-api/"
           className="font-bold bg-clip-text text-transparent bg-gradient-to-br from-purple-500 to-pink-500"
         >
           OpenAI api
-        </LinkPreview>{' '}and{' '}<LinkPreview
+        </LinkPreview>{' '}
+        and{' '}
+        <LinkPreview
           url="https://nextjs.org/"
           className="font-bold bg-clip-text text-transparent bg-gradient-to-br from-purple-500 to-pink-500"
         >
           Next.js
-        </LinkPreview>{' '}to build stunning and responsive web
-        application. I hold an AWS Certified Developer - Associate certificate.
+        </LinkPreview>{' '}
+        to build stunning and responsive web application. I hold an AWS
+        Certified Developer - Associate certificate.
       </div>
     </section>
   );

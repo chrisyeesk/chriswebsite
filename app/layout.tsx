@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import Header from './components/header';
-import { GeistSans } from 'geist/font/sans';
+import ActiveSectionContextProvider from '@/context/active-section-context';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -14,10 +14,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body>
-        <Header />
-        {children}
+    <html className="!scroll-smooth" lang="en">
+      <body className="">
+        <ActiveSectionContextProvider>
+          <Header />
+          {children}
+        </ActiveSectionContextProvider>
       </body>
     </html>
   );
