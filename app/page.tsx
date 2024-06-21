@@ -1,4 +1,6 @@
 import { Certificates } from './components/Certificates';
+import Chatbot from './components/ChatBot';
+import { Contact } from './components/Contact';
 import { Education } from './components/Education';
 import Experiences from './components/Experiences';
 import { Projects } from './components/Projects';
@@ -24,6 +26,8 @@ export default function Home() {
       <Projects />
       <Certificates />
       <Education />
+      <Contact />
+      <Chatbot/>
     </main>
   );
 }

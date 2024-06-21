@@ -15,21 +15,21 @@ const Introduction = () => {
     <section
       ref={ref}
       id="home"
-      className="h-screen flex flex-col justify-center px-20 lg:px-40 pb-20"
+      className="h-screen flex flex-col justify-center px-11 sm:px-20 lg:px-40 pb-20"
     >
       {/* <AnimatedText
         text={"Chris'"}
         type={'paragraph'}
         classAssign={`${playwrite.className} text-8xl mt-4 mb-1`}
       /> */}
-      <div className="">
+      <div className="text-6xl md:text-6xl lg:text-7xl xl:text-8xl">
         <div
-          className={`${playwrite.className} text-5xl md:text-8xl mt-20 mb-1`}
+          className={`${playwrite.className}  mt-24 mb-1`}
         >
           Chris'
         </div>
         <div
-          className={`${playwrite.className} text-5xl md:text-8xl mb-14 md:mb-12 lg:mb-20`}
+          className={`${playwrite.className}  mb-14 md:mb-12 lg:mb-20`}
         >
           Portfolio
         </div>
@@ -40,7 +40,7 @@ const Introduction = () => {
         </div>
         <div className="text-xl mb-5">AWS Certified Developer Associate</div>
       </div> */}
-      <div className={`text-lg md:text-4xl mb-5 leading-snug`}>
+      <div className={`text-xl md:text-3xl xl:text-4xl mb-5 leading-snug`}>
         I am a software engineer focused on building, deploying and testing
         full-stack web application. I use latest technolgies like{' '}
         <LinkPreview

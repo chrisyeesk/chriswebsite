@@ -20,13 +20,14 @@ const Experience = ({
   const scaleProgress = useTransform(
     scrollYProgress.scrollYProgress,
     [0, 1],
-    [0.93, 1]
+    [0.7, 1]
   );
   const opacityProgress = useTransform(
     scrollYProgress.scrollYProgress,
     [0, 1],
     [0.8, 1]
   );
+  
   return (
     <motion.div
       ref={ref}
@@ -42,14 +43,11 @@ const Experience = ({
               alt="logo"
               className="rounded-sm"
             />
-            <div className="flex text-xl md:text-2xl lg:text-3xl ">
-              <h2 className="ml-2 text-white font-semibold tracking-[-0.015em]">
-                {experience.title}
-              </h2>
-              <h2>&nbsp;</h2>
-              <h2 className="font-bold bg-clip-text text-transparent bg-gradient-to-br from-purple-500 to-pink-500">
+            <div className="ml-2 text-xl md:text-2xl lg:text-3xl text-white font-semibold tracking-[-0.015em]">
+              {experience.title}
+              <span className="ml-1 font-bold bg-clip-text text-transparent bg-gradient-to-br from-purple-500 to-pink-500">
                 {experience.company}
-              </h2>
+              </span>
             </div>
           </div>
           <div className="mt-3 ml-1">{experience.dateRange}</div>

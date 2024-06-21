@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useSectionInView } from '@/lib/hooks';
+import Title from './Title';
 
 const content = [
   {
@@ -16,8 +17,8 @@ const content = [
       <div className="h-full w-full  flex items-center justify-center text-white">
         <Image
           src="/aws cd.png"
-          width={300}
-          height={300}
+          width={1000}
+          height={1000}
           className="h-full w-full object-cover"
           alt="linear board demo"
         />
@@ -32,8 +33,8 @@ const content = [
       <div className="h-full w-full  flex items-center justify-center text-white">
         <Image
           src="/aws coursera.png"
-          width={300}
-          height={300}
+          width={1000}
+          height={1000}
           className="h-full w-full object-cover"
           alt="linear board demo"
         />
@@ -48,8 +49,8 @@ const content = [
       <div className="h-full w-full  flex items-center justify-center text-white">
         <Image
           src="/Coursera Nodejs.png"
-          width={300}
-          height={300}
+          width={1000}
+          height={1000}
           className="h-full w-full object-cover"
           alt="linear board demo"
         />
@@ -65,8 +66,8 @@ const content = [
       <div className="h-full w-full  flex items-center justify-center text-white">
         <Image
           src="/Coursera Kubernetes.png"
-          width={300}
-          height={300}
+          width={1000}
+          height={1000}
           className="h-full w-full object-cover"
           alt="linear board demo"
         />
@@ -82,8 +83,8 @@ const content = [
       <div className="h-full w-full  flex items-center justify-center text-white">
         <Image
           src="/Udemy Nextjs.png"
-          width={300}
-          height={300}
+          width={1000}
+          height={1000}
           className="h-full w-full object-cover"
           alt="linear board demo"
         />
@@ -98,8 +99,8 @@ const content = [
       <div className="h-full w-full  flex items-center justify-center text-white">
         <Image
           src="/Learn Jquery.png"
-          width={300}
-          height={300}
+          width={1000}
+          height={1000}
           className="h-full w-full object-cover"
           alt="linear board demo"
         />
@@ -114,8 +115,8 @@ const content = [
       <div className="h-full w-full  flex items-center justify-center text-white">
         <Image
           src="/Learn React Testing.png"
-          width={300}
-          height={300}
+          width={1000}
+          height={1000}
           className="h-full w-full object-cover"
           alt="linear board demo"
         />
@@ -130,8 +131,8 @@ const content = [
       <div className="h-full w-full  flex items-center justify-center text-white">
         <Image
           src="/Learn React Native.png"
-          width={300}
-          height={300}
+          width={1000}
+          height={1000}
           className="h-full w-full object-cover"
           alt="linear board demo"
         />
@@ -146,8 +147,8 @@ const content = [
       <div className="h-full w-full  flex items-center justify-center text-white">
         <Image
           src="/Learn Intermediate Php.png"
-          width={300}
-          height={300}
+          width={1000}
+          height={1000}
           className="h-full w-full object-cover"
           alt="linear board demo"
         />
@@ -162,8 +163,8 @@ const content = [
       <div className="h-full w-full  flex items-center justify-center text-white">
         <Image
           src="/Learn PHP Certificate.png"
-          width={300}
-          height={300}
+          width={1000}
+          height={1000}
           className="h-full w-full object-cover"
           alt="linear board demo"
         />
@@ -178,8 +179,8 @@ const content = [
       <div className="h-full w-full  flex items-center justify-center text-white">
         <Image
           src="/CSWA Certificate.png"
-          width={300}
-          height={300}
+          width={1000}
+          height={1000}
           className="h-full w-full object-cover"
           alt="linear board demo"
         />
@@ -191,7 +192,7 @@ const content = [
     description:
       'I am committed to life-long learning and I consistently upskill myself to stay relevant in the tech industry.',
     content: (
-      <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white">
+      <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-1000),var(--emerald-1000))] flex items-center justify-center text-white">
         Running out of content
       </div>
     ),
@@ -208,7 +209,7 @@ export function Certificates() {
   const scaleProgress = useTransform(
     scrollYProgress.scrollYProgress,
     [0, 1],
-    [0.93, 1]
+    [0.7, 1]
   );
   const opacityProgress = useTransform(
     scrollYProgress.scrollYProgress,
@@ -217,19 +218,15 @@ export function Certificates() {
   );
   return (
     <>
-      <div ref={ref}>
+      <div className="mb-20" ref={ref}>
         <motion.div
           ref={refScroll}
           style={{ scale: scaleProgress, opacity: opacityProgress }}
           id="certificates"
           className="scroll-mt-28"
         >
-          <div
-            className={`px-4 sm:px-20 md:px-40 flex justify-center lg:relative xl:justify-start font-bold text-3xl md:text-5xl mb-5`}
-          >
-            Certificates
-          </div>
-          <div className="px-4 lg:px-40">
+          <Title name="Certificates" />
+          <div className="px-4 xl:px-40">
             <StickyScroll content={content} />
           </div>
         </motion.div>

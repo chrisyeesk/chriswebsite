@@ -5,11 +5,15 @@ import Experience from './Experience';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 import { useSectionInView } from '@/lib/hooks';
+import Title from './Title';
 
 const Experiences = () => {
   const { ref } = useSectionInView('Experience');
-  const ref2 = useRef<HTMLDivElement>(null);
-  const scrollYProgress = useScroll({ target: ref2, offset: ['0 1', '1.33 1'] });
+  const refScroll = useRef<HTMLDivElement>(null);
+  const scrollYProgress = useScroll({
+    target: refScroll,
+    offset: ['0 1', '1.33 1'],
+  });
   const scaleProgress = useTransform(
     scrollYProgress.scrollYProgress,
     [0, 1],
@@ -21,24 +25,23 @@ const Experiences = () => {
     [0.8, 1]
   );
   return (
-    <div
-      className="px-4 scroll-mt-28 sm:px-20 md:px-40 mt-20"
-      id="experience"
-      ref={ref}
-    >
-      <motion.div
-        ref={ref}
-        style={{ scale: scaleProgress, opacity: opacityProgress }}
-        className="font-bold text-3xl md:text-5xl mb-5 text-center lg:text-left"
-      >
-        Experience
-      </motion.div>
-      <div className="max-w-6xl mx-auto text-slate-300 font-bold">
-        {experiences.map((experience, index) => (
-          <Experience key={index} experience={experience} index={index} />
-        ))}
+    <>
+      <div className="scroll-mt-5" id="experience" ref={ref}>
+        <motion.div
+          ref={refScroll}
+          style={{ scale: scaleProgress, opacity: opacityProgress }}
+        >
+          <Title name="Experience"/>
+        </motion.div>
+        <div className="px-4 sm:px-20 md:px-4 xl:px-40" id="experience">
+          <div className="max-w-6xl mx-auto text-slate-300 font-bold">
+            {experiences.map((experience, index) => (
+              <Experience key={index} experience={experience} index={index} />
+            ))}
+          </div>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

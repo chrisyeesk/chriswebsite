@@ -5,6 +5,7 @@ import { LinkPreview } from '@/components/ui/link-preview';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 import { useSectionInView } from '@/lib/hooks';
+import Title from './Title';
 
 export const Education = () => {
   const { ref } = useSectionInView('Education');
@@ -17,7 +18,7 @@ export const Education = () => {
   const scaleProgress = useTransform(
     scrollYProgress.scrollYProgress,
     [0, 1],
-    [0.8, 1]
+    [0.7, 1]
   );
   const opacityProgress = useTransform(
     scrollYProgress.scrollYProgress,
@@ -27,17 +28,13 @@ export const Education = () => {
 
   return (
     <>
-      <div ref={ref}>
+      <div className="mb-20" ref={ref}>
         <motion.div
           ref={refScroll}
           style={{ scale: scaleProgress, opacity: opacityProgress }}
           id="education"
         >
-          <div
-            className={`px-4 sm:px-20 md:px-40 flex justify-center lg:relative xl:justify-start font-bold mt-20 text-3xl md:text-5xl mb-5`}
-          >
-            Education
-          </div>
+          <Title name="Education" />
           <section className="mb-5 md:px-40 lg:flex">
             <div className="grid grid-cols-7 items-center lg:flex">
               <div className="col-span-2 flex justify-end mr-3">
