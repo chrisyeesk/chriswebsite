@@ -3,8 +3,9 @@ import Chatbot from './components/ChatBot';
 import { Contact } from './components/Contact';
 import { Education } from './components/Education';
 import Experiences from './components/Experiences';
+import Footer from './components/Footer';
 import { Projects } from './components/Projects';
-import Testing from './components/Testing';
+import TechStack from './components/TechStack';
 // import { PersonalPhoto } from './components/PersonalPhoto';
 import Introduction from './components/introduction';
 import { TestimonyCards } from './components/testimonyCards';
@@ -18,16 +19,18 @@ const manrope = localFont({
 export default function Home() {
   return (
     <main
-      className={`${manrope.className} flex text-GeistSans min-h-screen max-w-screen-2xl flex-col`}
+      className={`${manrope.className} mx-auto max-w-[3600px] justify-center flex text-GeistSans min-h-screen w-full flex-col`}
     >
       <Introduction />
       <TestimonyCards />
+      <TechStack />
       <Experiences />
       <Projects />
       <Certificates />
       <Education />
       <Contact />
       <Chatbot/>
+      <Footer />
     </main>
   );
 }

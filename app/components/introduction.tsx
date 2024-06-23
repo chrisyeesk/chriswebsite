@@ -15,21 +15,19 @@ const Introduction = () => {
     <section
       ref={ref}
       id="home"
-      className="h-screen flex flex-col justify-center px-11 sm:px-20 lg:px-40 pb-20"
+      className="h-screen max-w-[3000px] mx-auto flex flex-col justify-center px-11 sm:px-20 lg:px-40 pb-20"
     >
       {/* <AnimatedText
         text={"Chris'"}
         type={'paragraph'}
         classAssign={`${playwrite.className} text-8xl mt-4 mb-1`}
       /> */}
-      <div className="text-6xl md:text-6xl lg:text-7xl xl:text-8xl">
-        <div
-          className={`${playwrite.className}  mt-24 mb-1`}
-        >
+      <div className="text-6xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:mb-14 2xl:text-[11rem]">
+        <div className={`${playwrite.className}  mt-24 2xl:mt-0 mb-1`}>
           Chris'
         </div>
         <div
-          className={`${playwrite.className}  mb-14 md:mb-12 lg:mb-20`}
+          className={`${playwrite.className}  mb-14 md:mb-12 lg:mb-20 2xl:mb-10`}
         >
           Portfolio
         </div>
@@ -40,9 +38,9 @@ const Introduction = () => {
         </div>
         <div className="text-xl mb-5">AWS Certified Developer Associate</div>
       </div> */}
-      <div className={`text-xl md:text-3xl xl:text-4xl mb-5 leading-snug`}>
+      <div className={`text-xl md:text-3xl xl:text-4xl 2xl:text-7xl mb-5`}>
         I am a software engineer focused on building, deploying and testing
-        full-stack web application. I use latest technolgies like{' '}
+        full-stack web application. I use the latest technolgies, such as{' '}
         <LinkPreview
           url="https://www.framer.com/motion/"
           className="font-bold bg-clip-text text-transparent bg-gradient-to-br from-purple-500 to-pink-500"
@@ -51,10 +49,10 @@ const Introduction = () => {
         </LinkPreview>
         ,{' '}
         <LinkPreview
-          url="https://www.langchain.com/"
+          url="https://nextjs.org/"
           className="font-bold bg-clip-text text-transparent bg-gradient-to-br from-purple-500 to-pink-500"
         >
-          Langchain
+          Next.js
         </LinkPreview>
         ,{' '}
         <LinkPreview
@@ -65,12 +63,12 @@ const Introduction = () => {
         </LinkPreview>{' '}
         and{' '}
         <LinkPreview
-          url="https://nextjs.org/"
+          url="https://www.langchain.com/"
           className="font-bold bg-clip-text text-transparent bg-gradient-to-br from-purple-500 to-pink-500"
         >
-          Next.js
+          Langchain
         </LinkPreview>{' '}
-        to build stunning and responsive web application. I hold an AWS
+        to build stunning and futuristic web application. I hold an AWS
         Certified Developer - Associate certificate.
       </div>
     </section>

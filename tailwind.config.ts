@@ -92,7 +92,12 @@ const config = {
       },
     },
   },
-  plugins: [addVariablesForColors, require('tailwindcss-animate'), fluid],
+  plugins: [
+    addVariablesForColors,
+    require('tailwindcss-animate'),
+    fluid,
+    require('@tailwindcss/aspect-ratio'),
+  ],
 } satisfies Config;
 
 function addVariablesForColors({ addBase, theme }: any) {

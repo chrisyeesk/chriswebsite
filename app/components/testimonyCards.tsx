@@ -3,22 +3,23 @@
 import React, { useEffect, useState } from 'react';
 import { InfiniteMovingCards } from '@/components/ui/infinite-moving-cards';
 import { useSectionInView } from '@/lib/hooks';
+import { motion } from 'framer-motion';
 
 export function TestimonyCards() {
   const { ref } = useSectionInView('Testimony');
 
   return (
-    <div
+    <motion.div
       ref={ref}
       id="testimony"
-      className="-mt-24 mb-20 rounded-md flex flex-col antialiased bg-white dark:bg-black dark:bg-grid-white/[0.05] items-center relative overflow-hidden"
+      className="scroll-mt-28 max-w-[3600px] -mt-20 2xl:-mt-[204px] mb-20 rounded-md flex flex-col antialiased bg-white dark:bg-black dark:bg-grid-white/[0.05] items-center relative overflow-hidden"
     >
       <InfiniteMovingCards
         items={testimonials}
         direction="right"
         speed="slow"
       />
-    </div>
+    </motion.div>
   );
 }
 
@@ -46,11 +47,5 @@ const testimonials = [
       'I worked with Chris during our final year Software Project at University of Melbourne. Chris knows his stuff and have been a great team player. Chris was really good at his frontend work.',
     name: 'Louis Zhou',
     title: 'Software Engineer at Tinyme',
-  },
-  {
-    quote:
-      'I worked with with Chris at Sindy.ai. Chris was a fast learner and a major contributor to the team.',
-    name: 'Benjamin Li',
-    title: 'Software Engineer at Heidi Health',
-  },
+  }
 ];

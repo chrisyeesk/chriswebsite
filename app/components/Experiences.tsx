@@ -26,15 +26,16 @@ const Experiences = () => {
   );
   return (
     <>
-      <div className="scroll-mt-5" id="experience" ref={ref}>
+      <div className="mb-20" id="experience" ref={ref}>
         <motion.div
           ref={refScroll}
           style={{ scale: scaleProgress, opacity: opacityProgress }}
+          className="scroll-mt-28"
         >
-          <Title name="Experience"/>
+          <Title name="Experience" />
         </motion.div>
         <div className="px-4 sm:px-20 md:px-4 xl:px-40" id="experience">
-          <div className="max-w-6xl mx-auto text-slate-300 font-bold">
+          <div className="max-w-[3456px] mx-auto text-slate-300 font-bold">
             {experiences.map((experience, index) => (
               <Experience key={index} experience={experience} index={index} />
             ))}
@@ -51,7 +52,7 @@ const experiences = [
     logo: '/sindy_logo.png',
     logoWidth: 40,
     logoHeight: 40,
-    title: 'Software Engineer Intern at ',
+    title: 'Software Engineer Intern',
     company: 'Sindy.ai',
     url: 'https://sindy.ai/',
     dateRange: 'Apr 2024 - July 2024',
@@ -69,7 +70,7 @@ const experiences = [
     logo: '/webby_logo.jpeg',
     logoWidth: 37,
     logoHeight: 37,
-    title: 'Frontend Engineer Intern at ',
+    title: 'Frontend Engineer Intern',
     company: 'Webby Group',
     url: 'https://www.webbygroup.com/',
     dateRange: 'Dec 2022 - Feb 2023',
@@ -84,7 +85,7 @@ const experiences = [
     logo: '/intel_logo.png',
     logoWidth: 50,
     logoHeight: 65,
-    title: 'Process and Equipment Engineer at ',
+    title: 'Process and Equipment Engineer',
     company: 'Intel Corporation',
     url: 'https://www.intel.com/content/www/us/en/homepage.html',
     dateRange: 'Mar 2020 - Sep 2021',
@@ -99,7 +100,7 @@ const experiences = [
     logo: '/advanced_energy_logo.png',
     logoWidth: 37,
     logoHeight: 37,
-    title: 'Process Engineer at ',
+    title: 'Process Engineer',
     company: 'Advanced Energy Industries',
     url: 'https://www.advancedenergy.com/en-us/',
     dateRange: 'Nov 2018 - Jan 2019 & Nov 2017 - Jan 2018',

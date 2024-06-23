@@ -27,31 +27,35 @@ const Experience = ({
     [0, 1],
     [0.8, 1]
   );
-  
+
   return (
     <motion.div
       ref={ref}
       style={{ scale: scaleProgress, opacity: opacityProgress }}
     >
-      <WobbleCard containerClassName="h-full mb-4 bg-[#10172A] min-h-[300px] lg:min-h-[300px]">
-        <div className="max-w-5xl">
-          <div className="flex items-center">
-            <Image
-              src={experience.logo}
-              width={experience.logoWidth}
-              height={experience.logoHeight}
-              alt="logo"
-              className="rounded-sm"
-            />
-            <div className="ml-2 text-xl md:text-2xl lg:text-3xl text-white font-semibold tracking-[-0.015em]">
+      <WobbleCard containerClassName="h-full mb-4 bg-[#10172A] min-h-[300px] 2xl:min-h-[700px] lg:min-h-[300px]">
+        <div className="max-w-5xl 2xl:max-w-[3000px] flex flex-col items-center">
+          <div className="flex flex-col items-center text-center">
+            <div className="2xl:mb-8 mb-4 mt-2 md:text-2xl 2xl:text-7xl lg:text-3xl text-xl text-white font-semibold">
               {experience.title}
-              <span className="ml-1 font-bold bg-clip-text text-transparent bg-gradient-to-br from-purple-500 to-pink-500">
+            </div>
+            <div className="2xl:mb-5 flex items-center">
+              <Image
+                src={experience.logo}
+                width={experience.logoWidth}
+                height={experience.logoHeight}
+                alt="logo"
+                className="mr-3 2xl:mr-5 shadow-2xl rounded-sm 2xl:w-16"
+              />
+              <div className="md:text-2xl 2xl:text-6xl lg:text-3xl text-xl font-bold bg-clip-text text-transparent bg-gradient-to-br from-purple-500 to-pink-500">
                 {experience.company}
-              </span>
+              </div>
             </div>
           </div>
-          <div className="mt-3 ml-1">{experience.dateRange}</div>
-          <ul className="text-slate-400 text-sm md:text-base lg:text-md">
+          <div className="2xl:text-4xl mb-5 2xl:mb-10 mt-3 ml-1">
+            {experience.dateRange}
+          </div>
+          <ul className="2xl:text-4xl text-slate-400 text-sm md:text-base lg:text-md">
             {experience.highlights.map((highlight: any, idx: number) => (
               <li key={idx} className="">
                 {highlight}

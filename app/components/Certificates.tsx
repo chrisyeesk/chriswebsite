@@ -193,7 +193,7 @@ const content = [
       'I am committed to life-long learning and I consistently upskill myself to stay relevant in the tech industry.',
     content: (
       <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-1000),var(--emerald-1000))] flex items-center justify-center text-white">
-        Running out of content
+        End of the list
       </div>
     ),
   },
