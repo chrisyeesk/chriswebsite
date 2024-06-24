@@ -50,6 +50,7 @@ const Chatbot = () => {
     }, 5000);
 
     return () => clearTimeout(showTimer);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const chatWindowVariants = {

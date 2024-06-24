@@ -1,0 +1,9 @@
+# SSL configuration
+    listen 443 ssl;
+    listen [::]:443 ssl;
+    
+    ssl_certificate /etc/letsencrypt/live/chrisyeesk.com/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/chrisyeesk.com/privkey.pem;
+
+    # Other SSL settings (e.g., SSL protocols, ciphers, etc.)
+    include /etc/nginx/snippets/ssl-params.conf;

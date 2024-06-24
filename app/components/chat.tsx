@@ -183,7 +183,7 @@ export function Chat() {
         >
           <li className="flex justify-end">
             <div className="2xl:text-3xl mb-1 2xl:mb-3 2xl:py-5 2xl:px-7 rounded-xl 2xl:rounded-3xl py-3 px-5 bg-gray-600 text-sm text-white max-w-[71%] break-words">
-              I am Chris' AI assistant. Ask me anything about Chris' educational
+              I am Chris&apos; AI assistant. Ask me anything about Chris&apos; educational
               background, experience, and skills.
             </div>
           </li>

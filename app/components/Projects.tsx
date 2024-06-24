@@ -53,7 +53,7 @@ export function Projects() {
                 </h2>
                 <p className="mt-4 text-left 2xl:text-4xl text-base/6 text-neutral-200">
                   An AI chatbot built using Retrieval-Augmented-Generation (RAG)
-                  concept. It allows people to ask questions about Chris'
+                  concept. It allows people to ask questions about Chris&apos;
                   skills, work experience and educational background. The AI
                   chatbot is built using Next.js, Typescript, LangChain, OpenAI
                   api, Shadcn and deployed to AWS EC2 using nginx.

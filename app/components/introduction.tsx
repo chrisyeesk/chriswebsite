@@ -24,7 +24,7 @@ const Introduction = () => {
       /> */}
       <div className="text-6xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:mb-14 2xl:text-[11rem]">
         <div className={`${playwrite.className}  mt-24 2xl:mt-0 mb-1`}>
-          Chris'
+          Chris&apos;
         </div>
         <div
           className={`${playwrite.className}  mb-14 md:mb-12 lg:mb-20 2xl:mb-10`}
