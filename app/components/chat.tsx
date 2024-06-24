@@ -179,7 +179,7 @@ export function Chat() {
       <section className="container px-4 2xl:px-8 flex flex-col flex-grow gap-4 mx-auto">
         <ul
           ref={chatParent}
-          className="h-80 2xl:h-[700px] flex-grow rounded-lg overflow-y-auto flex flex-col gap-4"
+          className="h-80 2xl:h-[620px] flex-grow rounded-lg overflow-y-auto flex flex-col gap-4"
         >
           <li className="flex justify-end">
             <div className="2xl:text-3xl mb-1 2xl:mb-3 2xl:py-5 2xl:px-7 rounded-xl 2xl:rounded-3xl py-3 px-5 bg-gray-600 text-sm text-white max-w-[71%] break-words">

@@ -64,7 +64,7 @@ const Chatbot = () => {
       {/* Chat Window */}
       {isChatOpen && (
         <motion.div
-          className="fixed bottom-5 right-5 bg-white w-[340px] 2xl:w-[800px] 2xl:h-[900px] sm:w-[380px] h-[450px] border border-gray-300 shadow-lg rounded-lg p-4 flex flex-col z-50"
+          className="fixed bottom-5 right-5 bg-white w-[340px] 2xl:w-[700px] 2xl:h-[800px] sm:w-[380px] h-[450px] border border-gray-300 shadow-lg rounded-lg p-4 flex flex-col z-50"
           initial="hidden"
           animate="visible"
           exit="exit"

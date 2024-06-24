@@ -22,7 +22,7 @@ const Introduction = () => {
         type={'paragraph'}
         classAssign={`${playwrite.className} text-8xl mt-4 mb-1`}
       /> */}
-      <div className="text-6xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:mb-14 2xl:text-[9rem]">
+      <div className="text-6xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:mb-14 2xl:text-[8rem]">
         <div className={`${playwrite.className}  mt-24 2xl:mt-0 mb-1`}>
           Chris&apos;
         </div>
