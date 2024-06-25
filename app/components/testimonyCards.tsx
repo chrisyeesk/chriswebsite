@@ -26,7 +26,7 @@ export function TestimonyCards() {
 const testimonials = [
   {
     quote:
-      'You can rely Chris on almost everything, frontend, backend, deployment, authentication, database etc. I recommend Chris to any team who is looking for a full-stack developer.',
+      'You can rely Chris on almost everything, frontend, authentication, database etc. I recommend Chris to any team who is looking for a full-stack developer.',
     name: 'Taha Ansari',
     title: 'Chief Technology Officer at Sindy.ai',
   },
