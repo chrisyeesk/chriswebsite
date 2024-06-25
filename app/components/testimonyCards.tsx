@@ -26,6 +26,12 @@ export function TestimonyCards() {
 const testimonials = [
   {
     quote:
+      'You can rely Chris on almost everything, frontend, backend, deployment, authentication, database etc. I recommend Chris to any team who is looking for a full-stack developer.',
+    name: 'Taha Ansari',
+    title: 'Chief Technology Officer at Sindy.ai',
+  },
+  {
+    quote:
       "Chris took ownership of the project and delivered a high-quality work. Chris consistently upskill himself and up to date with the latest technologies. I will definitely recommend Chris for any project.'",
     name: 'Varshith Meesala',
     title: 'Frontend Lead at Sindy.ai',
@@ -38,7 +44,7 @@ const testimonials = [
   },
   {
     quote:
-      'Chris has exceptional scripting skills and brings a lot of value to the team. He took full ownship of his work, I highly recommend Chris to any team.',
+      'Chris has exceptional programming skills and brings a lot of value to the team. Chris constantly took initatives and he took full ownership of his work, I highly recommend Chris to any team.',
     name: 'Angelia Ng',
     title: 'Manager at Intel Corporation',
   },
