@@ -179,10 +179,10 @@ export function Chat() {
       <section className="container px-4 2xl:px-8 flex flex-col flex-grow gap-4 mx-auto">
         <ul
           ref={chatParent}
-          className="h-80 2xl:h-[620px] flex-grow rounded-lg overflow-y-auto flex flex-col gap-4"
+          className="h-80 2xl:h-[570px] flex-grow rounded-lg overflow-y-auto flex flex-col gap-4"
         >
           <li className="flex justify-end">
-            <div className="2xl:text-3xl mb-1 2xl:mb-3 2xl:py-5 2xl:px-7 rounded-xl 2xl:rounded-3xl py-3 px-5 bg-gray-600 text-sm text-white max-w-[71%] break-words">
+            <div className="2xl:text-2xl mb-1 2xl:mb-3 2xl:py-5 2xl:px-7 rounded-xl 2xl:rounded-3xl py-3 px-5 bg-gray-600 text-sm text-white max-w-[71%] break-words">
               I am Chris&apos; AI assistant. Ask me anything about Chris&apos; educational
               background, experience, and skills.
             </div>
@@ -191,13 +191,13 @@ export function Chat() {
             <div key={index}>
               {m.role === 'user' ? (
                 <li key={m.id} className="flex justify-start">
-                  <div className="2xl:text-3xl 2xl:mb-3 2xl:py-5 2xl:px-7 mb-1 rounded-xl 2xl:rounded-3xl py-3 px-5 bg-gray-800 text-sm text-white max-w-[71%] break-words">
+                  <div className="2xl:text-2xl 2xl:mb-3 2xl:py-5 2xl:px-7 mb-1 rounded-xl 2xl:rounded-3xl py-3 px-5 bg-gray-800 text-sm text-white max-w-[71%] break-words">
                     {m.content}
                   </div>
                 </li>
               ) : (
                 <li key={m.id} className="flex justify-end">
-                  <div className="2xl:text-3xl 2xl:mb-3 2xl:py-5 2xl:px-7 mb-1 rounded-xl 2xl:rounded-3xl py-3 px-5 bg-gray-600 text-sm text-white max-w-[71%] break-words">
+                  <div className="2xl:text-2xl 2xl:mb-3 2xl:py-5 2xl:px-7 mb-1 rounded-xl 2xl:rounded-3xl py-3 px-5 bg-gray-600 text-sm text-white max-w-[71%] break-words">
                     {m.content}
                   </div>
                 </li>
@@ -300,7 +300,7 @@ export function Chat() {
                       duration: 0.3,
                       ease: 'linear',
                     }}
-                    className="dark:text-zinc-500 2xl:text-3xl 2xl:pl-10 text-sxl font-normal text-neutral-500  pl-4 text-left w-[calc(100%-2rem)] truncate"
+                    className="dark:text-zinc-500 2xl:text-2xl 2xl:pl-5 text-sxl font-normal text-neutral-500  pl-4 text-left w-[calc(100%-2rem)] truncate"
                   >
                     {placeholders[currentPlaceholder]}
                   </motion.p>

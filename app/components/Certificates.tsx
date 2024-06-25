@@ -226,7 +226,7 @@ export function Certificates() {
           className="scroll-mt-28"
         >
           <Title name="Certificates" />
-          <div className="px-4 xl:px-40">
+          <div className="px-4 xl:px-40 2xl:p-0 2xl:mx-auto max-w-[1500px]">
             <StickyScroll content={content} />
           </div>
         </motion.div>

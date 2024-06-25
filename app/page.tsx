@@ -19,7 +19,7 @@ const manrope = localFont({
 export default function Home() {
   return (
     <main
-      className={`${manrope.className} mx-auto max-w-[3600px] justify-center flex text-GeistSans min-h-screen w-full flex-col`}
+      className={`${manrope.className} mx-auto justify-center flex text-GeistSans min-h-screen w-full flex-col`}
     >
       <Introduction />
       <TestimonyCards />

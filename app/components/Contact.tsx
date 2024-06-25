@@ -35,8 +35,8 @@ export const Contact = () => {
           id="contact"
         >
           <Title name="Contact" />
-          <section className="lg:ml-20 2xl:text-6xl text-xl sm:text-2xl mx-auto text-center xl:text-left mb-20 2xl:mb-28 px-4 xl:px-40">
-            <div>
+          <section className="2xl:flex 2xl:justify-center lg:ml-20 2xl:text-4xl text-xl sm:text-2xl mx-auto text-center xl:text-left mb-20 2xl:mb-28 px-4 xl:px-40">
+            <div className="2xl:mr-10">
               <a
                 href="https://drive.google.com/file/d/1MuBFAa6KLYf5EASdr1jaIuOrfSIDIwDR/view?usp=drive_link"
                 className="font-bold bg-clip-text text-transparent bg-gradient-to-br from-purple-500 to-pink-500"
@@ -46,7 +46,7 @@ export const Contact = () => {
                 My CV
               </a>
             </div>
-            <div>
+            <div className="2xl:mr-10">
               <a
                 href="https://www.linkedin.com/in/chrisysk/"
                 className="font-bold bg-clip-text text-transparent bg-gradient-to-br from-purple-500 to-pink-500"
@@ -57,8 +57,8 @@ export const Contact = () => {
               </a>
             </div>
 
-            <div>0448581566</div>
-            <div>chrisyeesk@gmail.com</div>
+            <div className="2xl:mr-10">0448581566</div>
+            <div className="2xl:mr-10">chrisyeesk@gmail.com</div>
           </section>
         </motion.div>
       </div>

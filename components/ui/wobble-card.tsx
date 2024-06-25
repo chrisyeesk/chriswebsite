@@ -28,7 +28,7 @@ export const WobbleCard = ({
         }}
       >
         <div
-          className={cn("min-h-[300px] lg:min-h-[300px] 2xl:px-32 2xl:py-28  px-6 py-10 sm:px-12", className)}
+          className={cn("min-h-[300px] lg:min-h-[300px] 2xl:px-10 2xl:py-auto px-6 py-10 sm:px-12", className)}
         >
           {children}
         </div>

@@ -34,8 +34,8 @@ const Experiences = () => {
         >
           <Title name="Experience" />
         </motion.div>
-        <div className="px-4 sm:px-20 md:px-4 xl:px-40" id="experience">
-          <div className="max-w-[3456px] mx-auto text-slate-300 font-bold">
+        <div className="px-4 sm:px-20 md:px-4 xl:px-40">
+          <div className="max-w-[1500px] mx-auto text-slate-300 font-bold">
             {experiences.map((experience, index) => (
               <Experience key={index} experience={experience} index={index} />
             ))}

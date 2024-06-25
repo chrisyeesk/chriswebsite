@@ -33,29 +33,29 @@ const Experience = ({
       ref={ref}
       style={{ scale: scaleProgress, opacity: opacityProgress }}
     >
-      <WobbleCard containerClassName="h-full mb-4 bg-[#10172A] min-h-[300px] 2xl:min-h-[700px] lg:min-h-[300px]">
-        <div className="max-w-5xl 2xl:max-w-[3000px] flex flex-col items-center">
+      <WobbleCard containerClassName="items-center h-full mb-4 bg-[#10172A] min-h-[300px] 2xl:min-h-[500px] lg:min-h-[300px]">
+        <div className="flex flex-col items-center">
           <div className="flex flex-col items-center text-center">
-            <div className="2xl:mb-8 mb-4 mt-2 md:text-2xl 2xl:text-7xl lg:text-3xl text-xl text-white font-semibold">
+            <div className="2xl:mb-4 mb-4 mt-2 md:text-2xl 2xl:text-4xl lg:text-3xl text-xl text-white font-semibold">
               {experience.title}
             </div>
-            <div className="2xl:mb-5 flex items-center">
+            <div className="2xl:mb-1 flex items-center">
               <Image
                 src={experience.logo}
                 width={experience.logoWidth}
                 height={experience.logoHeight}
                 alt="logo"
-                className="mr-3 2xl:mr-5 shadow-2xl rounded-sm 2xl:w-16"
+                className="mr-3 2xl:mr-5 shadow-2xl rounded-sm 2xl:w-12"
               />
-              <div className="md:text-2xl 2xl:text-6xl lg:text-3xl text-xl font-bold bg-clip-text text-transparent bg-gradient-to-br from-purple-500 to-pink-500">
+              <div className="md:text-2xl 2xl:text-3xl lg:text-3xl text-xl font-bold bg-clip-text text-transparent bg-gradient-to-br from-purple-500 to-pink-500">
                 {experience.company}
               </div>
             </div>
           </div>
-          <div className="2xl:text-4xl mb-5 2xl:mb-10 mt-3 ml-1">
+          <div className="2xl:text-2xl mb-5 2xl:mb-10 mt-3 ml-1">
             {experience.dateRange}
           </div>
-          <ul className="2xl:text-4xl text-slate-400 text-sm md:text-base lg:text-md">
+          <ul className="2xl:text-2xl text-slate-400 text-sm md:text-base lg:text-md">
             {experience.highlights.map((highlight: any, idx: number) => (
               <li key={idx} className="">
                 {highlight}

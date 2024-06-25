@@ -15,7 +15,7 @@ const Introduction = () => {
     <section
       ref={ref}
       id="home"
-      className="h-screen max-w-[3000px] mx-auto flex flex-col justify-center px-11 sm:px-20 lg:px-40 pb-20"
+      className="h-screen 2xl:max-w-[1700px] 2xl:px-0 max-w-[3000px] mx-auto flex flex-col justify-center px-11 sm:px-20 lg:px-40 pb-20"
     >
       {/* <AnimatedText
         text={"Chris'"}
@@ -23,7 +23,7 @@ const Introduction = () => {
         classAssign={`${playwrite.className} text-8xl mt-4 mb-1`}
       /> */}
       <div className="text-6xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:mb-14 2xl:text-[8rem]">
-        <div className={`${playwrite.className}  mt-24 2xl:mt-0 mb-1`}>
+        <div className={`${playwrite.className}  mt-24 2xl:mt-2 mb-1`}>
           Chris&apos;
         </div>
         <div

@@ -36,7 +36,7 @@ export const Education = () => {
         >
           <Title name="Education" />
           <section className=" mb-5 px-4 xl:px-40 lg:flex">
-            <div className="lg:ml-20 grid grid-cols-7 items-center lg:flex">
+            <div className="lg:ml-20 2xl:mx-auto grid grid-cols-7 items-center lg:flex">
               <div className="col-span-2 flex justify-end mr-3">
                 <Image
                   width={150}
@@ -47,14 +47,14 @@ export const Education = () => {
                 />
               </div>
               <div className="2xl:mr-40 col-span-5">
-                <div className="text-xl 2xl:text-6xl sm:text-2xl">
+                <div className="text-xl 2xl:text-4xl sm:text-2xl">
                   <LinkPreview
                     className="font-bold bg-clip-text text-transparent bg-gradient-to-br from-purple-500 to-pink-500"
                     url="https://www.unimelb.edu.au/"
                   >
                     University of Melbourne
                   </LinkPreview>
-                  <div className="2xl:mt-4">Master of Information Technology</div>
+                  <div className="2xl:mt-2">Master of Information Technology</div>
                 </div>
               </div>
               <div className="col-span-2 lg:ml-6 flex justify-end mr-6 mt-1">
@@ -66,14 +66,14 @@ export const Education = () => {
                   className="w-14 sm:w-20 2xl:w-40"
                 />
               </div>
-              <div className="col-span-5 2xl:text-6xl text-xl sm:text-2xl">
+              <div className="col-span-5 2xl:text-4xl text-xl sm:text-2xl">
                 <LinkPreview
                   className="font-bold bg-clip-text text-transparent bg-gradient-to-br from-purple-500 to-pink-500"
                   url="https://www.monash.edu/"
                 >
                   Monash University
                 </LinkPreview>
-                <div className="2xl:mt-4">Bachelor of Mechanical Engineering (Honours)</div>
+                <div className="2xl:mt-2">Bachelor of Mechanical Engineering (Honours)</div>
               </div>
             </div>
           </section>
