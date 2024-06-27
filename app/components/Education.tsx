@@ -47,7 +47,7 @@ export const Education = () => {
                 />
               </div>
               <div className="2xl:mr-40 col-span-5">
-                <div className="text-xl 2xl:text-4xl sm:text-2xl">
+                <div className="text-xl 2xl:text-3xl sm:text-2xl">
                   <LinkPreview
                     className="font-bold bg-clip-text text-transparent bg-gradient-to-br from-purple-500 to-pink-500"
                     url="https://www.unimelb.edu.au/"
@@ -66,7 +66,7 @@ export const Education = () => {
                   className="w-14 sm:w-20 2xl:w-40"
                 />
               </div>
-              <div className="col-span-5 2xl:text-4xl text-xl sm:text-2xl">
+              <div className="col-span-5 2xl:text-3xl text-xl sm:text-2xl">
                 <LinkPreview
                   className="font-bold bg-clip-text text-transparent bg-gradient-to-br from-purple-500 to-pink-500"
                   url="https://www.monash.edu/"

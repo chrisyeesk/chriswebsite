@@ -97,9 +97,9 @@ const Chatbot = () => {
       {!buttonDisabled && (
         <motion.button
           onClick={handleChatOpen}
-          className="fixed bottom-20 right-20 bg-gradient-to-br from-purple-500 to-pink-500 transform transition-transform duration-300 hover:-translate-y-1 text-white p-7 rounded-full shadow-lg focus:outline-none z-50 hidden 2xl:block"
+          className="fixed bottom-20 right-20 bg-gradient-to-br from-purple-500 to-pink-500 transform transition-transform duration-300 hover:-translate-y-1 text-white p-5 rounded-full shadow-lg focus:outline-none z-50 hidden 2xl:block"
         >
-          <MessageCircle size={40} strokeWidth={5} absoluteStrokeWidth />
+          <MessageCircle size={35} strokeWidth={5} absoluteStrokeWidth />
         </motion.button>
       )}
 

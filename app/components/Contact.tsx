@@ -35,7 +35,7 @@ export const Contact = () => {
           id="contact"
         >
           <Title name="Contact" />
-          <section className="2xl:flex 2xl:justify-center lg:ml-20 2xl:text-4xl text-xl sm:text-2xl mx-auto text-center xl:text-left mb-20 2xl:mb-28 px-4 xl:px-40">
+          <section className="2xl:flex 2xl:justify-center lg:ml-20 2xl:text-3xl text-xl sm:text-2xl mx-auto text-center xl:text-left mb-20 2xl:mb-28 px-4 xl:px-40">
             <div className="2xl:mr-10">
               <a
                 href="https://drive.google.com/file/d/1MuBFAa6KLYf5EASdr1jaIuOrfSIDIwDR/view?usp=drive_link"

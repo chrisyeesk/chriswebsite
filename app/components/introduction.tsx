@@ -15,7 +15,7 @@ const Introduction = () => {
     <section
       ref={ref}
       id="home"
-      className="h-screen 2xl:max-w-[1700px] 2xl:px-0 max-w-[3000px] mx-auto flex flex-col justify-center px-11 sm:px-20 lg:px-40 pb-20"
+      className="h-screen 2xl:max-w-[1500px] 2xl:px-0 max-w-[3000px] mx-auto flex flex-col justify-center px-11 sm:px-20 lg:px-40 pb-20"
     >
       {/* <AnimatedText
         text={"Chris'"}

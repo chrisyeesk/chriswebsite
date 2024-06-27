@@ -33,10 +33,10 @@ const Experience = ({
       ref={ref}
       style={{ scale: scaleProgress, opacity: opacityProgress }}
     >
-      <WobbleCard containerClassName="items-center h-full mb-4 bg-[#10172A] min-h-[300px] 2xl:min-h-[500px] lg:min-h-[300px]">
+      <WobbleCard containerClassName="items-center h-full mb-4 bg-[#10172A] min-h-[300px] 2xl:min-h-[400px] lg:min-h-[300px]">
         <div className="flex flex-col items-center">
           <div className="flex flex-col items-center text-center">
-            <div className="2xl:mb-4 mb-4 mt-2 md:text-2xl 2xl:text-4xl lg:text-3xl text-xl text-white font-semibold">
+            <div className="2xl:mb-4 mb-4 mt-2 md:text-2xl 2xl:text-3xl lg:text-3xl text-xl text-white font-semibold">
               {experience.title}
             </div>
             <div className="2xl:mb-1 flex items-center">
@@ -55,7 +55,7 @@ const Experience = ({
           <div className="2xl:text-2xl mb-5 2xl:mb-10 mt-3 ml-1">
             {experience.dateRange}
           </div>
-          <ul className="2xl:text-2xl text-slate-400 text-sm md:text-base lg:text-md">
+          <ul className="2xl:text-xl text-slate-400 text-sm md:text-base lg:text-md">
             {experience.highlights.map((highlight: any, idx: number) => (
               <li key={idx} className="">
                 {highlight}

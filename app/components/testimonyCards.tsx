@@ -9,6 +9,7 @@ export function TestimonyCards() {
   const { ref } = useSectionInView('Testimony');
 
   return (
+    // <></>
     <motion.div
       ref={ref}
       id="testimony"
@@ -53,5 +54,5 @@ const testimonials = [
       'I worked with Chris during our final year Software Project at University of Melbourne. Chris knows his stuff and have been a great team player. Chris was really good at his frontend work.',
     name: 'Louis Zhou',
     title: 'Software Engineer at Tinyme',
-  }
+  },
 ];

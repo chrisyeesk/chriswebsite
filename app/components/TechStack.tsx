@@ -36,7 +36,7 @@ export default function TechStack() {
           className="scroll-mt-28"
         >
           <Title name="Tech Stack" />
-          <div className="px-4 text-center pb-5 2xl:ml-14 2xl:mt-20 2xl:mb-10 2xl:text-4xl">
+          <div className="px-4 text-center pb-5 2xl:ml-14 2xl:mt-20 2xl:mb-10 2xl:text-3xl">
             Preferred tech stack:{' '}
             <LinkPreview
               url="https://nextjs.org/"
