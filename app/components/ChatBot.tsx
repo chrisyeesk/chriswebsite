@@ -7,7 +7,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 const ChatCloud = () => {
   return (
     <motion.div
-      className="fixed 2xl:text-2xl 2xl:w-[360px] 2xl:h-[100px] 2xl:pt-4 2xl:px-5 2xl:right-[150px] 2xl:bottom-[160px] right-[73px] bottom-[100px] bg-white w-56 border border-gray-300 shadow-lg rounded-lg p-4 z-50"
+      className="fixed 2xl:text-xl 2xl:w-[360px] 2xl:h-[100px] 2xl:pt-5 2xl:px-5 2xl:right-[132px] 2xl:bottom-[138px] right-[73px] bottom-[100px] bg-white w-56 border border-gray-300 shadow-lg rounded-lg p-4 z-50"
       initial={{ opacity: 0, x: 20 }}
       animate={{ opacity: 1, x: 0 }}
       exit={{ opacity: 0, x: 20 }}

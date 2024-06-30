@@ -43,11 +43,11 @@ export const Education = () => {
                   height={150}
                   alt="university of melbourne logo"
                   src="./unimelblogo.svg"
-                  className="w-20 sm:w-28 2xl:w-56"
+                  className="w-20 sm:w-28 2xl:w-36"
                 />
               </div>
               <div className="2xl:mr-40 col-span-5">
-                <div className="text-xl 2xl:text-3xl sm:text-2xl">
+                <div className="text-xl 2xl:text-2xl sm:text-2xl">
                   <LinkPreview
                     className="font-bold bg-clip-text text-transparent bg-gradient-to-br from-purple-500 to-pink-500"
                     url="https://www.unimelb.edu.au/"
@@ -63,10 +63,10 @@ export const Education = () => {
                   height={110}
                   alt="monash logo"
                   src="/monash.png"
-                  className="w-14 sm:w-20 2xl:w-40"
+                  className="w-14 sm:w-20 2xl:w-[100px]"
                 />
               </div>
-              <div className="col-span-5 2xl:text-3xl text-xl sm:text-2xl">
+              <div className="col-span-5 2xl:text-2xl text-xl sm:text-2xl">
                 <LinkPreview
                   className="font-bold bg-clip-text text-transparent bg-gradient-to-br from-purple-500 to-pink-500"
                   url="https://www.monash.edu/"
