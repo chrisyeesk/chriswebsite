@@ -22,7 +22,7 @@ const Introduction = () => {
         type={'paragraph'}
         classAssign={`${playwrite.className} text-8xl mt-4 mb-1`}
       /> */}
-      <div className="text-6xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:mb-14 2xl:text-[8rem]">
+      <div className="text-6xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:mb-14 2xl:text-[7rem]">
         <div className={`${playwrite.className}  mt-24 2xl:mt-2 mb-1`}>
           Chris&apos;
         </div>
@@ -38,7 +38,7 @@ const Introduction = () => {
         </div>
         <div className="text-xl mb-5">AWS Certified Developer Associate</div>
       </div> */}
-      <div className={`text-xl md:text-3xl xl:text-4xl 2xl:text-5xl mb-5`}>
+      <div className={`text-xl md:text-3xl xl:text-2xl 2xl:text-4xl mb-5`}>
         I am a software engineer focused on building, deploying and testing
         full-stack web application. I use the latest technolgies, such as{' '}
         <LinkPreview
