@@ -64,7 +64,7 @@ const Chatbot = () => {
       {/* Chat Window */}
       {isChatOpen && (
         <motion.div
-          className="fixed bottom-5 right-5 bg-white w-[340px] 2xl:w-[600px] 2xl:h-[750px] sm:w-[380px] h-[450px] border border-gray-300 shadow-lg rounded-lg p-4 flex flex-col z-50"
+          className="fixed bottom-5 right-5 bg-white w-[340px] 2xl:w-[400px] 2xl:h-[550px] sm:w-[380px] h-[450px] border border-gray-300 shadow-lg rounded-lg p-4 flex flex-col z-50"
           initial="hidden"
           animate="visible"
           exit="exit"
@@ -75,7 +75,7 @@ const Chatbot = () => {
             onClick={handleChatClose}
             className="self-end rounded-full focus:outline-none"
           >
-            <X className="2xl:w-10 2xl:h-8"/>
+            <X className="2xl:w-10 2xl:h-6 2xl:mb-2"/>
           </button>
           <div className="flex-1 mt-2">
             <Chat />

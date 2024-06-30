@@ -176,13 +176,13 @@ export function Chat() {
 
   return (
     <>
-      <section className="container px-4 2xl:px-8 flex flex-col flex-grow gap-4 mx-auto">
+      <section className="container px-4 2xl:px-2 flex flex-col flex-grow gap-4 mx-auto">
         <ul
           ref={chatParent}
-          className="h-80 2xl:h-[570px] flex-grow rounded-lg overflow-y-auto flex flex-col gap-4"
+          className="h-[315px] 2xl:h-[400px] flex-grow rounded-lg overflow-y-auto flex flex-col gap-4"
         >
           <li className="flex justify-end">
-            <div className="2xl:text-2xl mb-1 2xl:mb-3 2xl:py-5 2xl:px-7 rounded-xl 2xl:rounded-3xl py-3 px-5 bg-gray-600 text-sm text-white max-w-[71%] break-words">
+            <div className="2xl:text-md mb-1 2xl:mb-1 2xl:py-5 2xl:px-7 rounded-xl 2xl:rounded-3xl py-3 px-5 bg-gray-600 text-sm text-white max-w-[71%] break-words">
               I am Chris&apos; AI assistant. Ask me anything about Chris&apos; educational
               background, experience, and skills.
             </div>
@@ -191,13 +191,13 @@ export function Chat() {
             <div key={index}>
               {m.role === 'user' ? (
                 <li key={m.id} className="flex justify-start">
-                  <div className="2xl:text-2xl 2xl:mb-3 2xl:py-5 2xl:px-7 mb-1 rounded-xl 2xl:rounded-3xl py-3 px-5 bg-gray-800 text-sm text-white max-w-[71%] break-words">
+                  <div className="2xl:text-md 2xl:mb-1 2xl:py-5 2xl:px-7 mb-1 rounded-xl 2xl:rounded-3xl py-3 px-5 bg-gray-800 text-sm text-white max-w-[71%] break-words">
                     {m.content}
                   </div>
                 </li>
               ) : (
                 <li key={m.id} className="flex justify-end">
-                  <div className="2xl:text-2xl 2xl:mb-3 2xl:py-5 2xl:px-7 mb-1 rounded-xl 2xl:rounded-3xl py-3 px-5 bg-gray-600 text-sm text-white max-w-[71%] break-words">
+                  <div className="2xl:text-md 2xl:mb-1 2xl:py-5 2xl:px-7 mb-1 rounded-xl 2xl:rounded-3xl py-3 px-5 bg-gray-600 text-sm text-white max-w-[71%] break-words">
                     {m.content}
                   </div>
                 </li>
@@ -206,7 +206,7 @@ export function Chat() {
           ))}
         </ul>
       </section>
-      <footer className="p-4 2xl:px-8 w-full mx-auto">
+      <footer className="p-4 2xl:px-2 w-full mx-auto">
         <form
           onSubmit={handleFormSubmit}
           className="flex w-full  mx-auto items-center"
@@ -214,7 +214,7 @@ export function Chat() {
         >
           <div
             className={cn(
-              'w-full relative mx-auto bg-white dark:bg-zinc-800 h-12 2xl:h-20 rounded-xl overflow-hidden shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),_0px_1px_0px_0px_rgba(25,28,33,0.02),_0px_0px_0px_1px_rgba(25,28,33,0.08)] transition duration-200',
+              'w-full relative mx-auto bg-white dark:bg-zinc-800 h-12 2xl:h-12 rounded-xl overflow-hidden shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),_0px_1px_0px_0px_rgba(25,28,33,0.02),_0px_0px_0px_1px_rgba(25,28,33,0.08)] transition duration-200',
               value && 'bg-gray-50'
             )}
           >
@@ -237,7 +237,7 @@ export function Chat() {
               value={value}
               type="text"
               className={cn(
-                'w-full relative 2xl:pl-10 text-sm 2xl:text-3xl z-50 border-none dark:text-white bg-transparent text-black h-full rounded-full focus:outline-none focus:ring-0 pl-4 sm:pl-4 pr-14',
+                'w-full relative 2xl:pl-4 xl:mt-[13px] 2xl:mt-[13px] text-sm 2xl:text-sm z-50 border-none dark:text-white bg-transparent text-black rounded-full focus:outline-none focus:ring-0 pl-4 sm:pl-4 pr-14',
                 animating && 'text-transparent dark:text-transparent'
               )}
             />
@@ -245,7 +245,7 @@ export function Chat() {
             <button
               disabled={!value}
               type="submit"
-              className="absolute right-2 top-1/2 z-50 -translate-y-1/2 h-8 w-8 2xl:h-16 2xl:w-16 rounded-full disabled:bg-gray-100 bg-black dark:bg-zinc-900 dark:disabled:bg-zinc-800 transition duration-200 flex items-center justify-center"
+              className="absolute right-2 top-1/2 z-50 -translate-y-1/2 h-8 w-8 2xl:h-10 2xl:w-10 rounded-full disabled:bg-gray-100 bg-black dark:bg-zinc-900 dark:disabled:bg-zinc-800 transition duration-200 flex items-center justify-center"
             >
               <motion.svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -257,7 +257,7 @@ export function Chat() {
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                className="text-gray-300 2xl:h-10 2xl:w-10 h-4 w-4"
+                className="text-gray-300 2xl:h-6 2xl:w-10 h-4 w-4"
               >
                 <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                 <motion.path
@@ -300,7 +300,7 @@ export function Chat() {
                       duration: 0.3,
                       ease: 'linear',
                     }}
-                    className="dark:text-zinc-500 2xl:text-2xl 2xl:pl-5 text-sxl font-normal text-neutral-500  pl-4 text-left w-[calc(100%-2rem)] truncate"
+                    className="dark:text-zinc-500 lg:text-sm 2xl:pl-5 text-sxl font-normal text-black pl-4 text-left w-[calc(100%-2rem)] truncate"
                   >
                     {placeholders[currentPlaceholder]}
                   </motion.p>
