@@ -38,7 +38,7 @@ export const Contact = () => {
           <section className="2xl:flex 2xl:justify-center lg:ml-20 2xl:text-2xl text-xl sm:text-2xl mx-auto text-center xl:text-left mb-20 2xl:mb-28 px-4 xl:px-40">
             <div className="2xl:mr-10">
               <a
-                href="https://drive.google.com/file/d/1MuBFAa6KLYf5EASdr1jaIuOrfSIDIwDR/view?usp=drive_link"
+                href="https://drive.google.com/file/d/1Umz-YJzUVZp7IW_Kvm0QDCn9B_qIDsg9/view?usp=sharing"
                 className="font-bold bg-clip-text text-transparent bg-gradient-to-br from-purple-500 to-pink-500"
                 target="_blank"
                 rel="noopener noreferrer"

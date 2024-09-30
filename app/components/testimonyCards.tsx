@@ -27,6 +27,12 @@ export function TestimonyCards() {
 const testimonials = [
   {
     quote:
+      'Chris delivered the Colonial Secretary project on time with high quality. He required minimal supervision throughout his tenure at the State Library. He demonstrated passion in his work.',
+    name: 'Mankit Au',
+    title: 'Manager at State Library of Queensland',
+  },
+  {
+    quote:
       'You can rely Chris on almost everything, frontend, authentication, database etc. I recommend Chris to any team who is looking for a full-stack developer.',
     name: 'Taha Ansari',
     title: 'Chief Technology Officer at Sindy.ai',

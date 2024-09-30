@@ -36,44 +36,7 @@ export default function TechStack() {
           className="scroll-mt-28"
         >
           <Title name="Tech Stack" />
-          <div className="px-4 text-center pb-5 2xl:ml-14 2xl:mt-20 2xl:mb-10 2xl:text-3xl">
-            Preferred tech stack:{' '}
-            <LinkPreview
-              url="https://nextjs.org/"
-              className="font-bold bg-clip-text text-transparent bg-gradient-to-br from-purple-500 to-pink-500"
-            >
-              Next.js
-            </LinkPreview>
-            ,{' '}
-            <LinkPreview
-              url="https://www.typescriptlang.org/"
-              className="font-bold bg-clip-text text-transparent bg-gradient-to-br from-purple-500 to-pink-500"
-            >
-              Typescript
-            </LinkPreview>
-            ,{' '}
-            <LinkPreview
-              url="https://tailwindcss.com/"
-              className="font-bold bg-clip-text text-transparent bg-gradient-to-br from-purple-500 to-pink-500"
-            >
-              Tailwind CSS
-            </LinkPreview>
-            ,{' '}
-            <LinkPreview
-              url="https://nodejs.org/en"
-              className="font-bold bg-clip-text text-transparent bg-gradient-to-br from-purple-500 to-pink-500"
-            >
-              Node.js
-            </LinkPreview>{' '}
-            and{' '}
-            <LinkPreview
-              url="https://www.mongodb.com/"
-              className="font-bold bg-clip-text text-transparent bg-gradient-to-br from-purple-500 to-pink-500"
-            >
-              MongoDB
-            </LinkPreview>
-            .
-          </div>
+        
           <div className="mb-20 px-4 sm:px-20 md:px-4 xl:px-40">
             <section className="items-center justify-items-center grid gap-4 grid-cols-5 sm:grid-cols-6 md:grid-cols-9">
               <LinkPreview
