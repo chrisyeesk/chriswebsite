@@ -28,9 +28,8 @@ jobs:
       uses: appleboy/ssh-action@master
       with:
         host: ${{ secrets.EC2_HOST }}
-        username: ubuntu
+        username: ec2-user
         key: ${{ secrets.EC2_KEY }}
-        port: 22
         script: |
           cd chriswebsite
           git pull
