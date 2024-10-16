@@ -33,6 +33,7 @@ jobs:
         script: |
           cd chriswebsite
           git pull
+          pm2 stop all
           npm install
           npm run build
-          pm2 restart all
+          pm2 start npm --name "deployed nextjs" -- start
