@@ -49,6 +49,23 @@ const Experiences = () => {
 // Define experience data
 const experiences = [
   {
+    logo: '/workingmouse_logo.jpeg',
+    logoWidth: 40,
+    logoHeight: 40,
+    title: 'Full Stack Developer',
+    company: 'Working Mouse',
+    url: 'https://www.workingmouse.com.au/',
+    dateRange: 'Nov 2024 - present',
+    highlights: [
+      '• In charge of building the Queensland Colonial Secretary Website in both frontend and backend using Next.js, Typescript, Tailwind, MUI, PHP, Drupal, MariaDB, Solr, Docker and Lando.',
+      '• Worked on Property Acquisition and Disposal Record website for the Department of Transport and Main Roads (TMR).',
+      '• In charge of building the frontend and backend for the website.',
+      "• Worked on PDF, word and excel file report generation using Gembox.",
+      '• Deployment of the website to AWS ECS Fargate and setting up CI/CD on GitLab.',
+      '• Mastered the concept of platform engineering and model-driven engineering.'
+    ],
+  },
+  {
     logo: '/slq.png',
     logoWidth: 40,
     logoHeight: 40,
@@ -68,9 +85,7 @@ const experiences = [
       '• Improved Query Efficiency using TanStack Query.',
       '• Set up query parameters for keyword search, sorting, filtering and page number.',
       '• Mastered lando CLI commands such as lando config, composer install, drush uli, destroy, stop, update, logs, etc.',
-      '• Set up and import fonts from Typography.com.',
-      '• Version control using Gitlab.',
-    ],
+      '• Set up and import fonts from Typography.com.',    ],
   },
   {
     logo: '/sindy_logo.png',
