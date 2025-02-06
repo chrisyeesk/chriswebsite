@@ -57,8 +57,8 @@ const experiences = [
     url: 'https://www.workingmouse.com.au/',
     dateRange: 'Nov 2024 - present',
     highlights: [
-      '• In charge of building the Queensland Colonial Secretary Website in both frontend and backend using Next.js, Typescript, Tailwind, MUI, PHP, Drupal, MariaDB, Solr, Docker and Lando.',
-      '• Worked on Property Acquisition and Disposal Record website for the Department of Transport and Main Roads (TMR).',
+      '• Tech Stack: Typescript, C#.NET, Docker, AWS, GitLab.',
+      '• Built the Property Acquisition and Disposal Record website for the Department of Transport and Main Roads (TMR) with a team of 10.',
       '• In charge of building the frontend and backend for the website.',
       "• Worked on PDF, word and excel file report generation using Gembox.",
       '• Deployment of the website to AWS ECS Fargate and setting up CI/CD on GitLab.',
