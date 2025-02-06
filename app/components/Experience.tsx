@@ -55,7 +55,7 @@ const Experience = ({
           <div className="2xl:text-2xl mb-5 2xl:mb-10 mt-3 ml-1">
             {experience.dateRange}
           </div>
-          <ul className="2xl:text-xl lg:max-w-[1150px] text-slate-400 text-sm md:text-base lg:text-md">
+          <ul className="2xl:text-xl lg:max-w-[1200px] text-slate-400 text-sm md:text-base lg:text-md">
             {experience.highlights.map((highlight: any, idx: number) => (
               <li key={idx} className="">
                 {highlight}
