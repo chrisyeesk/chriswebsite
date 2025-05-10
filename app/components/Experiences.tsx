@@ -57,16 +57,18 @@ const experiences = [
     url: 'https://www.workingmouse.com.au/',
     dateRange: 'Nov 2024 - present',
     highlights: [
-      '• Tech Stack: Typescript, C#.NET, Docker, AWS, GitLab.',
-      '• Built the Property Acquisition and Disposal Record website for the Department of Transport and Main Roads (TMR) with a team of 10.',
-      '• In charge of building the frontend and backend for the website.',
-      "• Worked on PDF, word and excel file report generation using Gembox.",
+      '• Tech Stack: Typescript, React.js, Vue.js, C#.NET, Docker, AWS, Azure, GitLab.',
+      '• Built the Property Acquisition and Disposal Record website for the Department of Transport and Main Roads (TMR).',
+      '• In charge of building the frontend and backend of the website.',
+      '• Implemented website security measures, including URI injection prevention, API input validation, multi-factor authentication, SSL, and complex password restrictions.',
+      "• Monitor website performance and identify problems using Azure Application Insights and AWS CloudWatch Logs.",
       '• Deployment of the website to AWS ECS Fargate and setting up CI/CD on GitLab.',
+      '• Worked on PDF, word and excel file report generation using Gembox.',
       '• Mastered the concept of platform engineering and model-driven engineering.'
     ],
   },
   {
-    logo: '/slq.png',
+    logo: '/slq.jpg',
     logoWidth: 40,
     logoHeight: 40,
     title: 'Web Developer',
