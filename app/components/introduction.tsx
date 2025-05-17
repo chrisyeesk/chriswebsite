@@ -12,7 +12,7 @@ const Introduction = () => {
   const { ref } = useSectionInView('Home');
 
   return (
-    <section
+    <div
       ref={ref}
       id="home"
       className="h-screen 2xl:max-w-[1500px] 2xl:px-0 max-w-[3000px] mx-auto flex flex-col justify-center px-11 sm:px-20 lg:px-40 pb-20"
@@ -71,7 +71,7 @@ const Introduction = () => {
         to build stunning and futuristic web application. I hold an AWS
         Certified Developer - Associate certificate.
       </div>
-    </section>
+    </div>
   );
 };
 

@@ -26,7 +26,7 @@ const Experiences = () => {
   );
   return (
     <>
-      <div className="mb-20" ref={ref}>
+      <div className="mb-20" id="experience" ref={ref}>
         <motion.div
           ref={refScroll}
           style={{ scale: scaleProgress, opacity: opacityProgress }}
