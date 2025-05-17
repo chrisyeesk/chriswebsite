@@ -10,7 +10,7 @@ import TechStack from './components/TechStack';
 // import { PersonalPhoto } from './components/PersonalPhoto';
 import Introduction from './components/introduction';
 import { TestimonyCards } from './components/testimonyCards';
-import localFont from '@next/font/local';
+import localFont from 'next/font/local';
 
 // const roboto = localFont({ src: './components/font/roboto.woff2' });
 const manrope = localFont({

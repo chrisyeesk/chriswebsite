@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import localFont from '@next/font/local';
+import localFont from 'next/font/local';
 import { LinkPreview } from '@/components/ui/link-preview';
 import { useSectionInView } from '@/lib/hooks';
 
