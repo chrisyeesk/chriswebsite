@@ -26,7 +26,7 @@ const Experiences = () => {
   );
   return (
     <>
-      <div className="mb-20" id="experience" ref={ref}>
+      <div className="mb-20" ref={ref}>
         <motion.div
           ref={refScroll}
           style={{ scale: scaleProgress, opacity: opacityProgress }}
@@ -49,6 +49,22 @@ const Experiences = () => {
 // Define experience data
 const experiences = [
   {
+    logo: '/RACQ.png',
+    logoWidth: 40,
+    logoHeight: 40,
+    title: 'Digital Full Stack Developer',
+    company: 'RACQ',
+    url: 'https://www.racq.com.au/',
+    dateRange: 'Nov 2024 - present',
+    highlights: [
+      '• Tech Stack: Typescript, React.js, Vue.js, Tailwind, C#.NET, Sitecore, Docker, AWS, Azure.',
+      '• Developed web applications for a leading insurance company in Australia.',
+      '• Implement API rate limit through policy setting in Azure API Management.',
+      '• Performed website debugging and error analysis using Azure Application Insights and AWS CloudWatch logs.',
+      '• Bug fixes for RACQ website.',
+    ],
+  },
+  {
     logo: '/workingmouse_logo.jpeg',
     logoWidth: 40,
     logoHeight: 40,
@@ -60,8 +76,6 @@ const experiences = [
       '• Tech Stack: Typescript, React.js, Vue.js, C#.NET, Docker, AWS, Azure, GitLab.',
       '• Built the Property Acquisition and Disposal Record website for the Department of Transport and Main Roads (TMR).',
       '• In charge of building the frontend and backend of the website.',
-      '• Implemented website security measures, including URI injection prevention, API input validation, multi-factor authentication, SSL, and complex password restrictions.',
-      "• Monitor website performance and identify problems using Azure Application Insights and AWS CloudWatch Logs.",
       '• Deployment of the website to AWS ECS Fargate and setting up CI/CD on GitLab.',
       '• Worked on PDF, word and excel file report generation using Gembox.',
       '• Mastered the concept of platform engineering and model-driven engineering.'
@@ -71,12 +85,13 @@ const experiences = [
     logo: '/slq.jpg',
     logoWidth: 40,
     logoHeight: 40,
-    title: 'Web Developer',
+    title: 'Web Development Officer',
     company: 'State Library of Queensland',
     url: 'https://www.slq.qld.gov.au/',
     dateRange: 'Apr 2024 - present',
     highlights: [
-      '• In charge of building the Queensland Colonial Secretary Website in both frontend and backend using Next.js, Typescript, Tailwind, MUI, PHP, Drupal, MariaDB, Solr, Docker and Lando.',
+      '• Tech Stack: Next.js, Typescript, Tailwind, MUI, PHP, GraphQL, Drupal, MariaDB, Solr, Docker, Lando, GitLab, Jira.',
+      '• In charge of building the Queensland Colonial Secretary Website in both frontend and backend.',
       '• Maintained and fixed bugs for Queensland Government websites.',
       '• Set up Tailwind and MUI themes.',
       "• Migrated old websites which uses MUI v4 to MUI v5.",
@@ -98,7 +113,7 @@ const experiences = [
     url: 'https://sindy.ai/',
     dateRange: 'Jan 2024 - Mar 2024',
     highlights: [
-      '• Contributed to building a full-stack application using Next.js, Typescript, Tailwind, Python Fast API, Shadcn and PostgreSQL.',
+      '• Tech Stack: Next.js, Typescript, Tailwind, Python Fast API, Shadcn, PostgreSQL, Docker, AWS ECS, GitHub, Notion.',
       '• Built a Retrieval-Augmented Generation (RAG) Chatbot using LangChain and Socket.io.',
       '• Deployed multiple docker containers application to AWS ECS Fargate and automated CI/CD workflow using GitHub Actions.',
       "• Built Sign-in and Sign-up pages using Clerk and assign user roles (admin and normal user) to user accounts using Clerk's API.",
@@ -116,7 +131,8 @@ const experiences = [
     url: 'https://www.webbygroup.com/',
     dateRange: 'Dec 2022 - Feb 2023',
     highlights: [
-      '• Contributed to building a full-stack application using Typescript, React.js, Redux Toolkit, Material UI, MongoDB and Node.js.',
+      '• Tech Stack: Typescript, React.js, Redux Toolkit, Material UI, MongoDB, GraphQL, Node.js, GitHub.',
+      '• Contributed to building many frontend web pages for the company and took initiatives to build the backend APIs.',
       '• Designed and built MongoDB Database. Created GraphQL Schema to interact with MongoDB Database.',
       '• Built backend API endpoints using Express.js and Node.js.',
       '• Worked on website translation using i18next module.',
