@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import './globals.css';
-import Header from './components/header';
+import ConditionalHeader from './ConditionalHeader';
 import ActiveSectionContextProvider from '@/context/active-section-context';
 
 export const metadata: Metadata = {
@@ -17,7 +17,7 @@ export default function RootLayout({
     <html className="!scroll-smooth" lang="en">
       <body className="">
         <ActiveSectionContextProvider>
-          <Header />
+          <ConditionalHeader />
           {children}
         </ActiveSectionContextProvider>
       </body>
