@@ -9,8 +9,8 @@ export default function AIAssistant() {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   return (
-    <div className={`flex flex-col h-screen transition-colors duration-500 ${
-      isDarkMode ? 'bg-gray-800' : 'bg-white'
+    <div className={`flex flex-col h-screen transition-all duration-700 ${
+      isDarkMode ? 'bg-gradient-to-br from-gray-900 via-gray-800 to-black' : 'bg-gradient-to-br from-blue-50 via-white to-indigo-50'
     }`}>
       {/* Floating Back to Home Button */}
       <Link 

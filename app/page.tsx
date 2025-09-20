@@ -96,7 +96,7 @@ export default function Home() {
               ? 'from-white via-gray-300 to-gray-400' 
               : 'from-gray-800 via-gray-600 to-gray-700'
           }`}>
-            Chris&apos;s Digital Hub
+            Chris&apos;s Projects Hub
           </h1>
           {/* <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
             Explore my collection of projects
