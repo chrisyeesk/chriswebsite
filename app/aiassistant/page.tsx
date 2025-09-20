@@ -1,69 +1,40 @@
 import Link from 'next/link';
-import { ArrowLeft, Bot, MessageSquare } from 'lucide-react';
+import { ArrowLeft } from 'lucide-react';
+import { Chat } from '../components/ai-assistant/chat';
+
+export const runtime = 'edge';
 
 export default function AIAssistant() {
   return (
-    <main className="min-h-screen bg-gradient-to-br from-purple-900 via-purple-800 to-black text-white">
-      <div className="container mx-auto px-6 py-20">
-        {/* Back button */}
+    <div className="flex flex-col h-screen bg-white dark:bg-gray-800">
+      {/* Header */}
+      <header className="flex items-center justify-between p-4 border-b border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800">
         <Link 
           href="/"
-          className="inline-flex items-center text-purple-300 hover:text-white transition-colors mb-8"
+          className="inline-flex items-center px-3 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
         >
           <ArrowLeft className="w-4 h-4 mr-2" />
           Back to Home
         </Link>
-
-        {/* Header */}
-        <div className="text-center mb-16">
-          <div className="w-20 h-20 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center">
-            <Bot className="w-10 h-10 text-white" />
+        
+        <div className="flex items-center space-x-2">
+          <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
+            <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M22.282 9.821a5.985 5.985 0 0 0-.516-4.91 6.046 6.046 0 0 0-6.51-2.9A6.065 6.065 0 0 0 4.888 4.73a5.985 5.985 0 0 0-2.904 6.51 6.046 6.046 0 0 0 .516 4.91 6.046 6.046 0 0 0 6.51 2.9 6.065 6.065 0 0 0 10.368-2.719 5.985 5.985 0 0 0 2.904-6.51zm-6.772 4.672a4.109 4.109 0 0 1-1.816.613 4.128 4.128 0 0 1-1.863-.302 4.109 4.109 0 0 1-1.816-.613 4.128 4.128 0 0 1-.302-1.863 4.109 4.109 0 0 1 .613-1.816 4.128 4.128 0 0 1 1.863-.302 4.109 4.109 0 0 1 1.816.613 4.128 4.128 0 0 1 .302 1.863 4.109 4.109 0 0 1-.613 1.816z"/>
+            </svg>
           </div>
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-purple-300 to-pink-300 bg-clip-text text-transparent">
-            Chris AI Assistant
+          <h1 className="text-xl font-semibold text-gray-900 dark:text-white">
+            Chris AI
           </h1>
-          <p className="text-xl text-purple-200 max-w-3xl mx-auto">
-            An intelligent conversational AI assistant powered by advanced language models
-          </p>
         </div>
+        
+        <div className="w-20"></div> {/* Spacer for centering */}
+      </header>
 
-        {/* Coming Soon Content */}
-        <div className="max-w-4xl mx-auto">
-          <div className="bg-gradient-to-br from-purple-800/30 to-pink-800/30 backdrop-blur-sm border border-purple-700/50 rounded-2xl p-8 mb-8">
-            <div className="flex items-center mb-6">
-              <MessageSquare className="w-6 h-6 text-purple-300 mr-3" />
-              <h2 className="text-2xl font-bold">Coming Soon</h2>
-            </div>
-            <p className="text-purple-200 text-lg leading-relaxed mb-6">
-              This AI Assistant is currently under development. It will feature:
-            </p>
-            <ul className="space-y-3 text-purple-200">
-              <li className="flex items-start">
-                <span className="w-2 h-2 bg-purple-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                Natural language processing and understanding
-              </li>
-              <li className="flex items-start">
-                <span className="w-2 h-2 bg-purple-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                Contextual conversations and memory
-              </li>
-              <li className="flex items-start">
-                <span className="w-2 h-2 bg-purple-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                Task automation and assistance
-              </li>
-              <li className="flex items-start">
-                <span className="w-2 h-2 bg-purple-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                Integration with various APIs and services
-              </li>
-            </ul>
-          </div>
-
-          <div className="text-center">
-            <p className="text-purple-300 text-lg">
-              Stay tuned for updates on this exciting project!
-            </p>
-          </div>
-        </div>
+      {/* Chat Component */}
+      <div className="flex-1 overflow-hidden">
+        <Chat />
       </div>
-    </main>
+    </div>
   );
 }

@@ -5,7 +5,7 @@ import { LinkPreview } from '@/components/ui/link-preview';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 import { useSectionInView } from '@/lib/hooks';
-import Title from './Title';
+import Title from '../Title';
 
 export const Contact = () => {
   const { ref } = useSectionInView('Contact');

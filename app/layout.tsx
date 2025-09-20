@@ -4,8 +4,8 @@ import ConditionalHeader from './ConditionalHeader';
 import ActiveSectionContextProvider from '@/context/active-section-context';
 
 export const metadata: Metadata = {
-  title: 'Chris\' Portfolio',
-  description: 'Chris\'s Portfolio',
+  title: 'Chris\' Project',
+  description: 'Chris\'s Project',
 };
 
 export default function RootLayout({

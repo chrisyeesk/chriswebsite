@@ -1,15 +1,15 @@
-import { Certificates } from '../components/Certificates';
-import Chatbot from '../components/ChatBot';
-import { Contact } from '../components/Contact';
-import { Education } from '../components/Education';
-import Experiences from '../components/Experiences';
+import { Certificates } from '../components/portfolio/Certificates';
+import Chatbot from '../components/shared/ChatBot';
+import { Contact } from '../components/portfolio/Contact';
+import { Education } from '../components/portfolio/Education';
+import Experiences from '../components/portfolio/Experiences';
 import Head from 'next/head';
-import Footer from '../components/Footer';
-import { Projects } from '../components/Projects';
-import TechStack from '../components/TechStack';
+import Footer from '../components/portfolio/Footer';
+import { Projects } from '../components/portfolio/Projects';
+import TechStack from '../components/portfolio/TechStack';
 // import { PersonalPhoto } from '../components/PersonalPhoto';
-import Introduction from '../components/introduction';
-import { TestimonyCards } from '../components/testimonyCards';
+import Introduction from '../components/portfolio/introduction';
+import { TestimonyCards } from '../components/portfolio/testimonyCards';
 import localFont from 'next/font/local';
 
 // const roboto = localFont({ src: '../components/font/roboto.woff2' });

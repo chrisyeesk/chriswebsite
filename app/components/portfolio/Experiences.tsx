@@ -1,11 +1,11 @@
 'use client';
 
 import React from 'react';
-import Experience from './Experience';
+import Experience from '../Experience';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 import { useSectionInView } from '@/lib/hooks';
-import Title from './Title';
+import Title from '../Title';
 
 const Experiences = () => {
   const { ref } = useSectionInView('Experience');

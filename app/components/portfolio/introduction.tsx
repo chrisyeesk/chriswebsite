@@ -4,9 +4,9 @@ import localFont from 'next/font/local';
 import { LinkPreview } from '@/components/ui/link-preview';
 import { useSectionInView } from '@/lib/hooks';
 
-const playwrite = localFont({ src: './font/playwrite.woff2' });
-// const roboto = localFont({ src: './font/roboto.woff2' });
-// const cormorant = localFont({ src: 'cormorant.woff2' });
+const playwrite = localFont({ src: '../../components/font/playwrite.woff2' });
+// const roboto = localFont({ src: '../../components/font/roboto.woff2' });
+// const cormorant = localFont({ src: '../../components/font/cormorant.woff2' });
 
 const Introduction = () => {
   const { ref } = useSectionInView('Home');

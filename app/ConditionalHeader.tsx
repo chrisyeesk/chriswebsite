@@ -1,7 +1,7 @@
 'use client';
 
 import { usePathname } from 'next/navigation';
-import Header from './components/header';
+import Header from './components/shared/header';
 
 export default function ConditionalHeader() {
   const pathname = usePathname();

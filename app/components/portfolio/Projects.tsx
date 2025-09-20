@@ -6,7 +6,7 @@ import React from 'react';
 import { WobbleCard } from '@/components/ui/wobble-car-two';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useSectionInView } from '@/lib/hooks';
-import Title from './Title';
+import Title from '../Title';
 import { LinkPreview } from '@/components/ui/link-preview';
 
 export function Projects() {

@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useSectionInView } from '@/lib/hooks';
-import Title from './Title';
+import Title from '../Title';
 
 const content = [
   {

@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
-import Title from './Title';
+import Title from '../Title';
 import { LinkPreview } from '@/components/ui/link-preview'; // Assuming LinkPreview component is defined and imported correctly
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
