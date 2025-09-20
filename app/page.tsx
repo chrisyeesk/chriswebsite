@@ -82,7 +82,7 @@ export default function Home() {
         className={`fixed top-6 right-6 z-50 p-3 rounded-full transition-all duration-500 hover:scale-110 backdrop-blur-sm border ${
           isDarkMode 
             ? 'bg-gray-800/80 hover:bg-gray-700/80 text-yellow-400 border-gray-700/50' 
-            : 'bg-white/80 hover:bg-gray-100/80 text-gray-800 shadow-lg border-gray-200/50'
+            : 'bg-white/80 hover:bg-gray-100/80 text-gray-800 shadow-lg border-gray-100/50'
         }`}
       >
         {isDarkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
@@ -111,7 +111,7 @@ export default function Home() {
               href={project.href}
               className={`group relative overflow-hidden rounded-2xl backdrop-blur-sm transition-all duration-500 hover:scale-105 hover:shadow-2xl ${
                 isDarkMode 
-                  ? 'bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gray-700/50 hover:border-gray-600/50' 
+                  ? 'bg-gradient-to-br from-gray-900 to-gray-900 border border-gray-700/50 hover:border-gray-600/50' 
                   : 'bg-gradient-to-br from-white/80 to-gray-50/80 border border-gray-200/50 hover:border-gray-300/50 shadow-lg'
               }`}
             >
