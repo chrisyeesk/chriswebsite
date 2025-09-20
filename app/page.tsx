@@ -1,7 +1,14 @@
+"use client";
+
 import Link from 'next/link';
-import { ArrowRight, User, Bot, Headphones } from 'lucide-react';
+import { ArrowRight, User, Bot, Headphones, ShoppingCart } from 'lucide-react';
+import { IconBrandLinkedin, IconFileText, IconPhone, IconMail, IconBrandGithub } from '@tabler/icons-react';
+import { FloatingDock } from '@/components/ui/floating-dock';
+import { useState } from 'react';
 
 export default function Home() {
+  const [showGithubPopup, setShowGithubPopup] = useState(false);
+
   const projects = [
     {
       title: "Chris Portfolio Website",
@@ -23,24 +30,60 @@ export default function Home() {
       href: "/aivoiceagent",
       icon: <Headphones className="w-8 h-8" />,
       gradient: "from-orange-500 to-red-500"
+    },
+    {
+      title: "Chris E-commerce",
+      description: "A modern e-commerce platform featuring secure payment processing, inventory management, and responsive design. Built with cutting-edge web technologies for optimal user experience.",
+      href: "/ecommerce",
+      icon: <ShoppingCart className="w-8 h-8" />,
+      gradient: "from-green-500 to-emerald-500"
     }
   ];
 
+  const contactItems = [
+    {
+      title: "LinkedIn",
+      icon: <IconBrandLinkedin className="h-full w-full text-white" />,
+      href: "https://www.linkedin.com/in/chrisysk/",
+    },
+    {
+      title: "CV",
+      icon: <IconFileText className="h-full w-full text-white" />,
+      href: "https://drive.google.com/file/d/1Umz-YJzUVZp7IW_Kvm0QDCn9B_qIDsg9/view?usp=sharing",
+    },
+    {
+      title: "Phone",
+      icon: <IconPhone className="h-full w-full text-white" />,
+      href: "tel:+61448581566",
+    },
+    {
+      title: "Email",
+      icon: <IconMail className="h-full w-full text-white" />,
+      href: "mailto:chrisyeesk@gmail.com",
+    },
+    {
+      title: "GitHub",
+      icon: <IconBrandGithub className="h-full w-full text-white" />,
+      href: "#",
+      onClick: () => setShowGithubPopup(true),
+    },
+  ];
+
   return (
-    <main className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white">
+    <main className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white flex items-center">
       {/* Hero Section */}
-      <div className="container mx-auto px-6 py-20">
+      <div className="container mx-auto px-6 pt-26 w-full">
         <div className="text-center mb-16">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white via-gray-300 to-gray-400 bg-clip-text text-transparent">
+          <h1 className="text-5xl md:text-7xl md:h-20 font-bold mb-6 bg-gradient-to-r from-white via-gray-300 to-gray-400 bg-clip-text text-transparent">
             Chris&apos;s Digital Hub
           </h1>
-          <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            Explore my collection of innovative projects showcasing AI, web development, and modern technologies
-          </p>
+          {/* <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+            Explore my collection of projects
+          </p> */}
         </div>
 
         {/* Projects Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-8xl mx-auto">
           {projects.map((project, index) => (
             <Link 
               key={index}
@@ -76,13 +119,45 @@ export default function Home() {
           ))}
         </div>
 
-        {/* Footer note */}
-        <div className="text-center mt-16">
-          <p className="text-gray-500 text-lg">
-            Click on any project to dive deeper into the experience
-          </p>
+        {/* Contact Information */}
+        <div className="mt-12 pt-8 border-gray-700/50">
+          {/* <div className="text-center mb-6">
+            <h3 className="text-2xl font-semibold text-white mb-2">Let&apos;s Connect</h3>
+            <p className="text-gray-400">Get in touch or learn more about my work</p>
+          </div> */}
+          
+          <div className="flex justify-center">
+            <FloatingDock
+              items={contactItems}
+              desktopClassName="bg-gray-500/50"
+              mobileClassName=""
+            />
+          </div>
         </div>
       </div>
+
+      {/* GitHub Access Popup */}
+      {showGithubPopup && (
+        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50" onClick={() => setShowGithubPopup(false)}>
+          <div className="bg-gray-800/90 border border-gray-700/50 rounded-xl p-8 max-w-md mx-4 backdrop-blur-md" onClick={(e) => e.stopPropagation()}>
+            <div className="text-center">
+              <div className="w-16 h-16 mx-auto mb-4 bg-gray-700/50 rounded-full flex items-center justify-center">
+                <IconBrandGithub className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-xl font-bold text-white mb-3">GitHub Access</h3>
+              <p className="text-gray-300 mb-6 leading-relaxed">
+                Please connect with Chris to have access to my GitHub repositories. Reach out via LinkedIn or email to discuss collaboration opportunities.
+              </p>
+              <button 
+                onClick={() => setShowGithubPopup(false)}
+                className="px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 rounded-lg text-white font-medium transition-all duration-300 hover:scale-105"
+              >
+                Got it!
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </main>
   );
 }

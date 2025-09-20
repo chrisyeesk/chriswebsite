@@ -7,12 +7,10 @@ import Head from 'next/head';
 import Footer from '../components/portfolio/Footer';
 import { Projects } from '../components/portfolio/Projects';
 import TechStack from '../components/portfolio/TechStack';
-// import { PersonalPhoto } from '../components/PersonalPhoto';
 import Introduction from '../components/portfolio/introduction';
 import { TestimonyCards } from '../components/portfolio/testimonyCards';
 import localFont from 'next/font/local';
 
-// const roboto = localFont({ src: '../components/font/roboto.woff2' });
 const manrope = localFont({
   src: '../components/font/Manrope-ExtraLight.woff2',
   display: 'swap',
