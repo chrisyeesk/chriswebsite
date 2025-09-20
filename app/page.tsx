@@ -1,13 +1,14 @@
 "use client";
 
 import Link from 'next/link';
-import { ArrowRight, User, Bot, Headphones, ShoppingCart } from 'lucide-react';
+import { ArrowRight, User, Bot, Headphones, ShoppingCart, Sun, Moon } from 'lucide-react';
 import { IconBrandLinkedin, IconFileText, IconPhone, IconMail, IconBrandGithub } from '@tabler/icons-react';
 import { FloatingDock } from '@/components/ui/floating-dock';
 import { useState } from 'react';
 
 export default function Home() {
   const [showGithubPopup, setShowGithubPopup] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(true);
 
   const projects = [
     {
@@ -43,38 +44,60 @@ export default function Home() {
   const contactItems = [
     {
       title: "LinkedIn",
-      icon: <IconBrandLinkedin className="h-full w-full text-white" />,
+      icon: <IconBrandLinkedin className={`h-full w-full ${isDarkMode ? 'text-white' : 'text-gray-800'}`} />,
       href: "https://www.linkedin.com/in/chrisysk/",
     },
     {
       title: "CV",
-      icon: <IconFileText className="h-full w-full text-white" />,
+      icon: <IconFileText className={`h-full w-full ${isDarkMode ? 'text-white' : 'text-gray-800'}`} />,
       href: "https://drive.google.com/file/d/1Umz-YJzUVZp7IW_Kvm0QDCn9B_qIDsg9/view?usp=sharing",
     },
     {
       title: "Phone",
-      icon: <IconPhone className="h-full w-full text-white" />,
+      icon: <IconPhone className={`h-full w-full ${isDarkMode ? 'text-white' : 'text-gray-800'}`} />,
       href: "tel:+61448581566",
     },
     {
       title: "Email",
-      icon: <IconMail className="h-full w-full text-white" />,
+      icon: <IconMail className={`h-full w-full ${isDarkMode ? 'text-white' : 'text-gray-800'}`} />,
       href: "mailto:chrisyeesk@gmail.com",
     },
     {
       title: "GitHub",
-      icon: <IconBrandGithub className="h-full w-full text-white" />,
+      icon: <IconBrandGithub className={`h-full w-full ${isDarkMode ? 'text-white' : 'text-gray-800'}`} />,
       href: "#",
       onClick: () => setShowGithubPopup(true),
     },
   ];
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white flex items-center">
+    <main className={`min-h-screen transition-all duration-500 flex items-center ${
+      isDarkMode 
+        ? 'bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white' 
+        : 'bg-gradient-to-br from-blue-50 via-white to-gray-100 text-gray-900'
+    }`}>
+      {/* Theme Toggle Button */}
+      <button
+        onClick={() => setIsDarkMode(!isDarkMode)}
+        className={`fixed top-6 right-6 z-50 p-3 rounded-full transition-all duration-300 hover:scale-110 ${
+          isDarkMode 
+            ? 'bg-gray-800/80 hover:bg-gray-700/80 text-yellow-400' 
+            : 'bg-white/80 hover:bg-gray-100/80 text-gray-800 shadow-lg'
+        } backdrop-blur-sm border ${
+          isDarkMode ? 'border-gray-700/50' : 'border-gray-200/50'
+        }`}
+      >
+        {isDarkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+      </button>
+
       {/* Hero Section */}
       <div className="container mx-auto px-6 pt-26 w-full">
         <div className="text-center mb-16">
-          <h1 className="text-5xl md:text-7xl md:h-20 font-bold mb-6 bg-gradient-to-r from-white via-gray-300 to-gray-400 bg-clip-text text-transparent">
+          <h1 className={`text-5xl md:text-7xl md:h-20 font-bold mb-6 bg-gradient-to-r bg-clip-text text-transparent ${
+            isDarkMode 
+              ? 'from-white via-gray-300 to-gray-400' 
+              : 'from-gray-800 via-gray-600 to-gray-700'
+          }`}>
             Chris&apos;s Digital Hub
           </h1>
           {/* <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
@@ -88,7 +111,11 @@ export default function Home() {
             <Link 
               key={index}
               href={project.href}
-              className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm border border-gray-700/50 hover:border-gray-600/50 transition-all duration-300 hover:scale-105 hover:shadow-2xl"
+              className={`group relative overflow-hidden rounded-2xl backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:shadow-2xl ${
+                isDarkMode 
+                  ? 'bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gray-700/50 hover:border-gray-600/50' 
+                  : 'bg-gradient-to-br from-white/80 to-gray-50/80 border border-gray-200/50 hover:border-gray-300/50 shadow-lg'
+              }`}
             >
               <div className="p-8">
                 {/* Icon with gradient background */}
@@ -99,15 +126,25 @@ export default function Home() {
                 </div>
 
                 {/* Content */}
-                <h3 className="text-2xl font-bold mb-4 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-gray-300 group-hover:bg-clip-text transition-all duration-300">
+                <h3 className={`text-2xl font-bold mb-4 transition-all duration-300 ${
+                  isDarkMode 
+                    ? 'group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-gray-300 group-hover:bg-clip-text' 
+                    : 'group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-gray-800 group-hover:to-gray-600 group-hover:bg-clip-text'
+                }`}>
                   {project.title}
                 </h3>
-                <p className="text-gray-400 mb-6 leading-relaxed">
+                <p className={`mb-6 leading-relaxed ${
+                  isDarkMode ? 'text-gray-400' : 'text-gray-600'
+                }`}>
                   {project.description}
                 </p>
 
                 {/* Arrow indicator */}
-                <div className="flex items-center text-gray-500 group-hover:text-white transition-colors duration-300">
+                <div className={`flex items-center transition-colors duration-300 ${
+                  isDarkMode 
+                    ? 'text-gray-500 group-hover:text-white' 
+                    : 'text-gray-500 group-hover:text-gray-800'
+                }`}>
                   <span className="mr-2">Explore</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
                 </div>
@@ -129,8 +166,9 @@ export default function Home() {
           <div className="flex justify-center">
             <FloatingDock
               items={contactItems}
-              desktopClassName="bg-gray-500/50"
+              desktopClassName={isDarkMode ? "bg-gray-500/50" : "bg-white/50 shadow-lg"}
               mobileClassName=""
+              isDarkMode={isDarkMode}
             />
           </div>
         </div>

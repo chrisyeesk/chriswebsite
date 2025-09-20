@@ -1,5 +1,3 @@
-"use client";
-
 import { cn } from "@/lib/utils";
 import { IconLayoutNavbarCollapse } from "@tabler/icons-react";
 import {
@@ -17,15 +15,17 @@ export const FloatingDock = ({
   items,
   desktopClassName,
   mobileClassName,
+  isDarkMode = true,
 }: {
-  items: { title: string; icon: React.ReactNode; href: string; onClick?: () => void }[];
+  items: { title: string; icon: React.ReactNode; href: string }[];
   desktopClassName?: string;
   mobileClassName?: string;
+  isDarkMode?: boolean;
 }) => {
   return (
     <>
-      <FloatingDockDesktop items={items} className={desktopClassName} />
-      <FloatingDockMobile items={items} className={mobileClassName} />
+      <FloatingDockDesktop items={items} className={desktopClassName} isDarkMode={isDarkMode} />
+      <FloatingDockMobile items={items} className={mobileClassName} isDarkMode={isDarkMode} />
     </>
   );
 };
@@ -33,9 +33,11 @@ export const FloatingDock = ({
 const FloatingDockMobile = ({
   items,
   className,
+  isDarkMode = true,
 }: {
-  items: { title: string; icon: React.ReactNode; href: string; onClick?: () => void }[];
+  items: { title: string; icon: React.ReactNode; href: string }[];
   className?: string;
+  isDarkMode?: boolean;
 }) => {
   const [open, setOpen] = useState(false);
   return (
@@ -66,13 +68,9 @@ const FloatingDockMobile = ({
                 <a
                   href={item.href}
                   key={item.title}
-                  className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-50 dark:bg-neutral-900"
-                  onClick={(e) => {
-                    if (item.onClick) {
-                      e.preventDefault();
-                      item.onClick();
-                    }
-                  }}
+                  className={`flex h-10 w-10 items-center justify-center rounded-full ${
+                    isDarkMode ? 'bg-gray-700' : 'bg-white shadow-md'
+                  }`}
                 >
                   <div className="h-4 w-4">{item.icon}</div>
                 </a>
@@ -83,9 +81,13 @@ const FloatingDockMobile = ({
       </AnimatePresence>
       <button
         onClick={() => setOpen(!open)}
-        className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-50 dark:bg-neutral-800"
+        className={`flex h-10 w-10 items-center justify-center rounded-full ${
+          isDarkMode ? 'bg-gray-700' : 'bg-white shadow-md'
+        }`}
       >
-        <IconLayoutNavbarCollapse className="h-5 w-5 text-neutral-500 dark:text-neutral-400" />
+        <IconLayoutNavbarCollapse className={`h-5 w-5 ${
+          isDarkMode ? 'text-neutral-400' : 'text-neutral-600'
+        }`} />
       </button>
     </div>
   );
@@ -94,9 +96,11 @@ const FloatingDockMobile = ({
 const FloatingDockDesktop = ({
   items,
   className,
+  isDarkMode = true,
 }: {
-  items: { title: string; icon: React.ReactNode; href: string; onClick?: () => void }[];
+  items: { title: string; icon: React.ReactNode; href: string }[];
   className?: string;
+  isDarkMode?: boolean;
 }) => {
   let mouseX = useMotionValue(Infinity);
   return (
@@ -109,7 +113,7 @@ const FloatingDockDesktop = ({
       )}
     >
       {items.map((item) => (
-        <IconContainer mouseX={mouseX} key={item.title} {...item} />
+        <IconContainer mouseX={mouseX} key={item.title} {...item} isDarkMode={isDarkMode} />
       ))}
     </motion.div>
   );
@@ -120,13 +124,13 @@ function IconContainer({
   title,
   icon,
   href,
-  onClick,
+  isDarkMode = true,
 }: {
   mouseX: MotionValue;
   title: string;
   icon: React.ReactNode;
   href: string;
-  onClick?: () => void;
+  isDarkMode?: boolean;
 }) {
   let ref = useRef<HTMLDivElement>(null);
 
@@ -170,21 +174,16 @@ function IconContainer({
 
   const [hovered, setHovered] = useState(false);
 
-  const handleClick = (e: React.MouseEvent) => {
-    if (onClick) {
-      e.preventDefault();
-      onClick();
-    }
-  };
-
   return (
-    <a href={href} onClick={handleClick}>
+    <a href={href}>
       <motion.div
         ref={ref}
         style={{ width, height }}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
-        className="relative flex aspect-square items-center justify-center rounded-full bg-gray-700 dark:bg-neutral-900"
+        className={`relative flex aspect-square items-center justify-center rounded-full ${
+          isDarkMode ? 'bg-gray-700' : 'bg-white shadow-lg'
+        }`}
       >
         <AnimatePresence>
           {hovered && (
@@ -192,7 +191,11 @@ function IconContainer({
               initial={{ opacity: 0, y: 10, x: "-50%" }}
               animate={{ opacity: 1, y: 0, x: "-50%" }}
               exit={{ opacity: 0, y: 2, x: "-50%" }}
-              className="absolute -top-8 left-1/2 w-fit rounded-md border border-gray-200 bg-gray-100 px-2 py-0.5 text-xs whitespace-pre text-neutral-700 dark:border-neutral-900 dark:bg-neutral-800 dark:text-white"
+              className={`absolute -top-8 left-1/2 w-fit rounded-md border px-2 py-0.5 text-xs whitespace-pre ${
+                isDarkMode 
+                  ? 'border-gray-600 bg-gray-800 text-white' 
+                  : 'border-gray-200 bg-white text-gray-700 shadow-lg'
+              }`}
             >
               {title}
             </motion.div>
