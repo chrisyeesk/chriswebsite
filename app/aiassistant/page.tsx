@@ -1,39 +1,45 @@
-import Link from 'next/link';
-import { ArrowLeft } from 'lucide-react';
-import { Chat } from '../components/ai-assistant/chat';
+"use client";
 
-export const runtime = 'edge';
+import Link from 'next/link';
+import { ArrowLeft, Sun, Moon } from 'lucide-react';
+import { Chat } from './chat';
+import { useState } from 'react';
 
 export default function AIAssistant() {
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
   return (
-    <div className="flex flex-col h-screen bg-white dark:bg-gray-800">
-      {/* Header */}
-      <header className="flex items-center justify-between p-4 border-b border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800">
-        <Link 
-          href="/"
-          className="inline-flex items-center px-3 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
-        >
-          <ArrowLeft className="w-4 h-4 mr-2" />
-          Back to Home
-        </Link>
-        
-        <div className="flex items-center space-x-2">
-          <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
-            <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M22.282 9.821a5.985 5.985 0 0 0-.516-4.91 6.046 6.046 0 0 0-6.51-2.9A6.065 6.065 0 0 0 4.888 4.73a5.985 5.985 0 0 0-2.904 6.51 6.046 6.046 0 0 0 .516 4.91 6.046 6.046 0 0 0 6.51 2.9 6.065 6.065 0 0 0 10.368-2.719 5.985 5.985 0 0 0 2.904-6.51zm-6.772 4.672a4.109 4.109 0 0 1-1.816.613 4.128 4.128 0 0 1-1.863-.302 4.109 4.109 0 0 1-1.816-.613 4.128 4.128 0 0 1-.302-1.863 4.109 4.109 0 0 1 .613-1.816 4.128 4.128 0 0 1 1.863-.302 4.109 4.109 0 0 1 1.816.613 4.128 4.128 0 0 1 .302 1.863 4.109 4.109 0 0 1-.613 1.816z"/>
-            </svg>
-          </div>
-          <h1 className="text-xl font-semibold text-gray-900 dark:text-white">
-            Chris AI
-          </h1>
-        </div>
-        
-        <div className="w-20"></div> {/* Spacer for centering */}
-      </header>
+    <div className={`flex flex-col h-screen transition-colors duration-500 ${
+      isDarkMode ? 'bg-gray-800' : 'bg-white'
+    }`}>
+      {/* Floating Back to Home Button */}
+      <Link 
+        href="/"
+        className={`fixed top-4 left-4 z-50 inline-flex items-center px-3 py-2 text-sm font-medium rounded-lg backdrop-blur-sm transition-all duration-300 hover:scale-105 ${
+          isDarkMode 
+            ? 'text-gray-300 hover:text-white bg-gray-800/80 hover:bg-gray-700/80 border border-gray-700/50' 
+            : 'text-gray-700 hover:text-gray-900 bg-white/80 hover:bg-gray-100/80 border border-gray-200/50 shadow-lg'
+        }`}
+      >
+        <ArrowLeft className="w-4 h-4 mr-2" />
+        Back to Home
+      </Link>
+      
+      {/* Floating Theme Toggle Button */}
+      <button
+        onClick={() => setIsDarkMode(!isDarkMode)}
+        className={`fixed top-4 right-4 z-50 p-3 rounded-full transition-all duration-300 hover:scale-110 backdrop-blur-sm border ${
+          isDarkMode 
+            ? 'bg-gray-800/80 hover:bg-gray-700/80 text-yellow-400 border-gray-700/50' 
+            : 'bg-white/80 hover:bg-gray-100/80 text-gray-800 shadow-lg border-gray-200/50'
+        }`}
+      >
+        {isDarkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+      </button>
 
       {/* Chat Component */}
       <div className="flex-1 overflow-hidden">
-        <Chat />
+        <Chat isDarkMode={isDarkMode} />
       </div>
     </div>
   );

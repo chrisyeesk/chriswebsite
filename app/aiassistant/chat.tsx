@@ -11,7 +11,7 @@ import { useRef, useEffect, useState } from 'react';
 import { Textarea } from '@/components/ui/textarea';
 import { BotMessageSquare, Send } from 'lucide-react';
 
-export function Chat() {
+export function Chat({ isDarkMode = false }: { isDarkMode?: boolean }) {
   const [showExampleQuestions, setShowExampleQuestions] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const { messages, input, setInput, handleInputChange, handleSubmit } =
@@ -65,15 +65,21 @@ export function Chat() {
   };
 
   return (
-    <main className="flex flex-col w-full h-screen max-h-dvh bg-black">
+    <main className={`flex flex-col w-full h-screen max-h-dvh transition-colors duration-500 ${
+      isDarkMode ? 'bg-black' : 'bg-gray-50'
+    }`}>
       <section className="container px-4 pb-10 flex flex-col flex-grow gap-4 mx-auto max-w-3xl">
         <div className="flex mt-5 items-center">
-          <BotMessageSquare size={47} className="text-gray-400 pt-1" />
+          <BotMessageSquare size={47} className={`pt-1 ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`} />
           <div>
-            <div className="ml-2 text-xl text-gray-400 font-semibold">
-              Chris' AI Assistant
+            <div className={`ml-2 text-xl font-semibold transition-colors duration-300 ${
+              isDarkMode ? 'text-gray-400' : 'text-gray-700'
+            }`}>
+              Chris&apos; AI Assistant
             </div>
-            <div className="text-xs ml-2 text-gray-400 font-semibold">
+            <div className={`text-xs ml-2 font-semibold transition-colors duration-300 ${
+              isDarkMode ? 'text-gray-400' : 'text-gray-600'
+            }`}>
               built by Chris
             </div>
           </div>
@@ -83,8 +89,12 @@ export function Chat() {
           className="h-96 flex-grow rounded-lg overflow-y-auto flex flex-col gap-4"
         >
           <li className="flex justify-end">
-            <div className="mb-1 rounded-lg py-3 px-5 bg-gray-600 text-sm text-white max-w-[70%] break-words">
-              I am Chris' AI assistant. Ask me anything about Chris' educational
+            <div className={`mb-1 rounded-lg py-3 px-5 text-sm max-w-[70%] break-words transition-colors duration-300 ${
+              isDarkMode 
+                ? 'bg-gray-600 text-white' 
+                : 'bg-blue-500 text-white'
+            }`}>
+              I am Chris&apos; AI assistant. Ask me anything about Chris&apos; educational
               background, work experience and skills.
             </div>
           </li>
@@ -92,13 +102,21 @@ export function Chat() {
             <div key={index}>
               {m.role === 'user' ? (
                 <li key={m.id} className="flex justify-start">
-                  <div className="mb-1 rounded-lg py-3 px-5 bg-gray-800 text-sm text-white max-w-[70%] break-words">
+                  <div className={`mb-1 rounded-lg py-3 px-5 text-sm max-w-[70%] break-words transition-colors duration-300 ${
+                    isDarkMode 
+                      ? 'bg-gray-800 text-white' 
+                      : 'bg-gray-200 text-gray-800'
+                  }`}>
                     {m.content}
                   </div>
                 </li>
               ) : (
                 <li key={m.id} className="flex justify-end">
-                  <div className="mb-1 rounded-lg py-3 px-5 bg-gray-600 text-sm  text-white max-w-[70%] break-words">
+                  <div className={`mb-1 rounded-lg py-3 px-5 text-sm max-w-[70%] break-words transition-colors duration-300 ${
+                    isDarkMode 
+                      ? 'bg-gray-600 text-white' 
+                      : 'bg-blue-500 text-white'
+                  }`}>
                     {m.content}
                   </div>
                 </li>
@@ -123,10 +141,18 @@ export function Chat() {
                 onClick={() =>
                   handleClickQuestion('What did Chris Study at University?')
                 }
-                className="w-1/2 h-30 sm:h-20 py-3 px-4 text-sm text-left items-center align-middle rounded-md border border-gray-600 bg-gray-900 hover:bg-gray-800 "
+                className={`w-1/2 h-30 sm:h-20 py-3 px-4 text-sm text-left items-center align-middle rounded-md border cursor-pointer transition-colors duration-300 ${
+                  isDarkMode 
+                    ? 'border-gray-600 bg-gray-900 hover:bg-gray-800' 
+                    : 'border-gray-300 bg-white hover:bg-gray-50'
+                }`}
               >
-                <div className="text-gray-100">Example Question 1:</div>
-                <div className="text-gray-400">
+                <div className={`transition-colors duration-300 ${
+                  isDarkMode ? 'text-gray-100' : 'text-gray-800'
+                }`}>Example Question 1:</div>
+                <div className={`transition-colors duration-300 ${
+                  isDarkMode ? 'text-gray-400' : 'text-gray-600'
+                }`}>
                   What did Chris Study at University?
                 </div>
               </div>
@@ -136,10 +162,18 @@ export function Chat() {
                     'What programming language is Chris proficient in?'
                   )
                 }
-                className="w-1/2 h-30 sm:h-20 py-3 px-4 text-sm text-left items-center align-middle rounded-md border border-gray-600 bg-gray-900 hover:bg-gray-800 "
+                className={`w-1/2 h-30 sm:h-20 py-3 px-4 text-sm text-left items-center align-middle rounded-md border cursor-pointer transition-colors duration-300 ${
+                  isDarkMode 
+                    ? 'border-gray-600 bg-gray-900 hover:bg-gray-800' 
+                    : 'border-gray-300 bg-white hover:bg-gray-50'
+                }`}
               >
-                <div className="text-gray-100">Example Question 2:</div>
-                <div className="text-gray-400">
+                <div className={`transition-colors duration-300 ${
+                  isDarkMode ? 'text-gray-100' : 'text-gray-800'
+                }`}>Example Question 2:</div>
+                <div className={`transition-colors duration-300 ${
+                  isDarkMode ? 'text-gray-400' : 'text-gray-600'
+                }`}>
                   What programming language is Chris proficient in?
                 </div>
               </div>
@@ -151,10 +185,18 @@ export function Chat() {
                     'What did Chris Learn in his software engineering internship at Sincidium?'
                   )
                 }
-                className="w-1/2 h-30 sm:h-20 py-2 px-4 text-sm text-left items-center align-middle rounded-md border border-gray-600 bg-gray-900 hover:bg-gray-800 "
+                className={`w-1/2 h-30 sm:h-20 py-2 px-4 text-sm text-left items-center align-middle rounded-md border cursor-pointer transition-colors duration-300 ${
+                  isDarkMode 
+                    ? 'border-gray-600 bg-gray-900 hover:bg-gray-800' 
+                    : 'border-gray-300 bg-white hover:bg-gray-50'
+                }`}
               >
-                <div className="text-gray-100">Example Question 3:</div>
-                <div className="text-gray-400">
+                <div className={`transition-colors duration-300 ${
+                  isDarkMode ? 'text-gray-100' : 'text-gray-800'
+                }`}>Example Question 3:</div>
+                <div className={`transition-colors duration-300 ${
+                  isDarkMode ? 'text-gray-400' : 'text-gray-600'
+                }`}>
                   What did Chris Learn in his software engineering internship at
                   Sincidium?
                 </div>
@@ -165,10 +207,18 @@ export function Chat() {
                     'What did Chris Learn during his internship as a frontend developer at Webby Group?'
                   )
                 }
-                className="w-1/2 h-30 sm:h-20 py-2 px-4 text-sm text-left items-center align-middle rounded-md border border-gray-600 bg-gray-900 hover:bg-gray-800 "
+                className={`w-1/2 h-30 sm:h-20 py-2 px-4 text-sm text-left items-center align-middle rounded-md border cursor-pointer transition-colors duration-300 ${
+                  isDarkMode 
+                    ? 'border-gray-600 bg-gray-900 hover:bg-gray-800' 
+                    : 'border-gray-300 bg-white hover:bg-gray-50'
+                }`}
               >
-                <div className="text-gray-100">Example Question 4:</div>
-                <div className="text-gray-400">
+                <div className={`transition-colors duration-300 ${
+                  isDarkMode ? 'text-gray-100' : 'text-gray-800'
+                }`}>Example Question 4:</div>
+                <div className={`transition-colors duration-300 ${
+                  isDarkMode ? 'text-gray-400' : 'text-gray-600'
+                }`}>
                   What did Chris Learn during his internship as a frontend
                   developer at Webby Group?
                 </div>
@@ -182,7 +232,9 @@ export function Chat() {
           ref={formRef}
         >
           <Textarea
-            className="text-gray-400"
+            className={`transition-colors duration-300 ${
+              isDarkMode ? 'text-gray-400' : 'text-gray-700'
+            }`}
             value={input}
             placeholder="Type your message here."
             onChange={handleInputChange}
@@ -193,7 +245,9 @@ export function Chat() {
             <Send />
           </Button>
         </form>
-        <div className="text-gray-400 text-xs flex mt-3 mb-2 justify-center">
+        <div className={`text-xs flex mt-3 mb-2 justify-center transition-colors duration-300 ${
+          isDarkMode ? 'text-gray-400' : 'text-gray-600'
+        }`}>
           Response from my AI Assistant does not represent my stance.
         </div>
       </footer>

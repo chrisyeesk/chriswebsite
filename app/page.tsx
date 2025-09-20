@@ -79,12 +79,10 @@ export default function Home() {
       {/* Theme Toggle Button */}
       <button
         onClick={() => setIsDarkMode(!isDarkMode)}
-        className={`fixed top-6 right-6 z-50 p-3 rounded-full transition-all duration-300 hover:scale-110 ${
+        className={`fixed top-6 right-6 z-50 p-3 rounded-full transition-all duration-500 hover:scale-110 backdrop-blur-sm border ${
           isDarkMode 
-            ? 'bg-gray-800/80 hover:bg-gray-700/80 text-yellow-400' 
-            : 'bg-white/80 hover:bg-gray-100/80 text-gray-800 shadow-lg'
-        } backdrop-blur-sm border ${
-          isDarkMode ? 'border-gray-700/50' : 'border-gray-200/50'
+            ? 'bg-gray-800/80 hover:bg-gray-700/80 text-yellow-400 border-gray-700/50' 
+            : 'bg-white/80 hover:bg-gray-100/80 text-gray-800 shadow-lg border-gray-200/50'
         }`}
       >
         {isDarkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
@@ -93,7 +91,7 @@ export default function Home() {
       {/* Hero Section */}
       <div className="container mx-auto px-6 pt-26 w-full">
         <div className="text-center mb-16">
-          <h1 className={`text-5xl md:text-7xl md:h-20 font-bold mb-6 bg-gradient-to-r bg-clip-text text-transparent ${
+          <h1 className={`text-5xl md:text-7xl md:h-20 font-bold mb-6 bg-gradient-to-r bg-clip-text text-transparent transition-all duration-500 ${
             isDarkMode 
               ? 'from-white via-gray-300 to-gray-400' 
               : 'from-gray-800 via-gray-600 to-gray-700'
@@ -111,7 +109,7 @@ export default function Home() {
             <Link 
               key={index}
               href={project.href}
-              className={`group relative overflow-hidden rounded-2xl backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:shadow-2xl ${
+              className={`group relative overflow-hidden rounded-2xl backdrop-blur-sm transition-all duration-500 hover:scale-105 hover:shadow-2xl ${
                 isDarkMode 
                   ? 'bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gray-700/50 hover:border-gray-600/50' 
                   : 'bg-gradient-to-br from-white/80 to-gray-50/80 border border-gray-200/50 hover:border-gray-300/50 shadow-lg'
@@ -126,31 +124,31 @@ export default function Home() {
                 </div>
 
                 {/* Content */}
-                <h3 className={`text-2xl font-bold mb-4 transition-all duration-300 ${
+                <h3 className={`text-2xl font-bold mb-4 transition-all duration-500 ${
                   isDarkMode 
                     ? 'group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-gray-300 group-hover:bg-clip-text' 
                     : 'group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-gray-800 group-hover:to-gray-600 group-hover:bg-clip-text'
                 }`}>
                   {project.title}
                 </h3>
-                <p className={`mb-6 leading-relaxed ${
+                <p className={`mb-6 leading-relaxed transition-colors duration-500 ${
                   isDarkMode ? 'text-gray-400' : 'text-gray-600'
                 }`}>
                   {project.description}
                 </p>
 
                 {/* Arrow indicator */}
-                <div className={`flex items-center transition-colors duration-300 ${
+                <div className={`flex items-center transition-colors duration-500 ${
                   isDarkMode 
                     ? 'text-gray-500 group-hover:text-white' 
                     : 'text-gray-500 group-hover:text-gray-800'
                 }`}>
                   <span className="mr-2">Explore</span>
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-500" />
                 </div>
 
                 {/* Gradient overlay on hover */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-300 rounded-2xl`} />
+                <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-500 rounded-2xl`} />
               </div>
             </Link>
           ))}
