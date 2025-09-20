@@ -55,13 +55,16 @@ const experiences = [
     title: 'Digital Full Stack Developer',
     company: 'RACQ',
     url: 'https://www.racq.com.au/',
-    dateRange: 'Nov 2024 - present',
+    dateRange: 'Apr 2025 - present',
     highlights: [
       '• Tech Stack: Typescript, React.js, Vue.js, Tailwind, C#.NET, Sitecore, Docker, AWS, Azure.',
-      '• Developed web applications for a leading insurance company in Australia.',
-      '• Implement API rate limit through policy setting in Azure API Management.',
-      '• Performed website debugging and error analysis using Azure Application Insights and AWS CloudWatch logs.',
-      '• Bug fixes for RACQ website.',
+      '• Web development for Queensland\'s best insurance company.',
+      '• Implemented Website Security Measures including URI injection prevention, API input validation, CSP and CORs configuration etc.',
+      '• Implement API rate limit through Azure Resource Management (ARM) and Azure API Management (APIM)',
+      '• Build new features into RACQ\'s website.',
+      '• Website deployment using Team City and Octopus Deploy.',
+      '• Website debugging and error detection using Azure App Insights and AWS Cloudwatch logs.',
+      '• Bug fixes for RACQ website.'
     ],
   },
   {
@@ -71,7 +74,7 @@ const experiences = [
     title: 'Full Stack Developer',
     company: 'Working Mouse',
     url: 'https://www.workingmouse.com.au/',
-    dateRange: 'Nov 2024 - present',
+    dateRange: 'Nov 2024 - Apr 2025',
     highlights: [
       '• Tech Stack: Typescript, React.js, Vue.js, C#.NET, Docker, AWS, Azure, GitLab.',
       '• Built the Property Acquisition and Disposal Record website for the Department of Transport and Main Roads (TMR).',
@@ -88,7 +91,7 @@ const experiences = [
     title: 'Web Development Officer',
     company: 'State Library of Queensland',
     url: 'https://www.slq.qld.gov.au/',
-    dateRange: 'Apr 2024 - present',
+    dateRange: 'Apr 2024 - Oct 2024',
     highlights: [
       '• Tech Stack: Next.js, Typescript, Tailwind, MUI, PHP, GraphQL, Drupal, MariaDB, Solr, Docker, Lando, GitLab, Jira.',
       '• In charge of building the Queensland Colonial Secretary Website in both frontend and backend.',

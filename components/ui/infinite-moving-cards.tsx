@@ -88,10 +88,10 @@ export const InfiniteMovingCards = ({
       >
         {items.map((item, idx) => (
           <li
-            className=" 2xl:w-[630px] 2xl:h-[370px] w-[350px] max-w-full relative rounded-2xl border border-b-0 flex-shrink-0 border-slate-700 2xl:px-16 2xl:py-10 px-8 py-6 md:w-[450px]"
+            className=" 2xl:w-[630px] 2xl:h-[370px] w-[350px] max-w-full relative rounded-2xl border border-b-0 flex-shrink-0 border-slate-800/50 2xl:px-16 2xl:py-10 px-8 py-6 md:w-[450px]"
             style={{
               background:
-                'linear-gradient(180deg, var(--slate-800), var(--slate-900)',
+                'linear-gradient(135deg, rgb(15, 23, 42, 0.9), rgb(0, 0, 0, 0.9))',
             }}
             key={item.name}
           >
@@ -107,10 +107,10 @@ export const InfiniteMovingCards = ({
               </div>
               <div className="relative z-20 2xl:mt-12 mt-6 flex flex-row items-center">
                 <span className="flex flex-col gap-1">
-                  <span className="2xl:text-xl text-base leading-[1.6] text-gray-400 font-normal">
+                  <span className="2xl:text-xl text-base leading-[1.6] text-blue-300 font-normal">
                     {item.name}
                   </span>
-                  <span className="2xl:text-xl text-base leading-[1.6] text-gray-400 font-normal">
+                  <span className="2xl:text-xl text-base leading-[1.6] text-slate-400 font-normal">
                     {item.title}
                   </span>
                 </span>

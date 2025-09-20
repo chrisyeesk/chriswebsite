@@ -12,7 +12,7 @@ export function TestimonyCards() {
     <div id="testimony">
       <motion.div
         ref={ref}
-        className="scroll-mt-28 -mt-20 2xl:-mt-[204px] mb-20 rounded-md flex flex-col antialiased bg-white dark:bg-black dark:bg-grid-white/[0.05] items-center relative overflow-hidden"
+        className="scroll-mt-28 -mt-20 2xl:-mt-[204px] mb-20 rounded-md flex flex-col antialiased dark:bg-black dark:bg-grid-white/[0.05] items-center relative overflow-hidden"
       >
         <InfiniteMovingCards
           items={testimonials}
