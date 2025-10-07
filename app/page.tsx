@@ -521,7 +521,7 @@ export default function Home() {
           </section>
 
           {/* Testimony Section */}
-          <section id="testimony" className="bg-zinc-100 dark:bg-zinc-900 py-16 md:py-32 overflow-hidden">
+          <section id="testimony" className="bg-zinc-100 dark:bg-zinc-900 py-16 md:py-32 overflow-x-hidden">
             <div className="mx-auto max-w-7xl px-6">
               <div className="text-center mb-16">
                 <FadeInWhenVisible>
@@ -532,11 +532,13 @@ export default function Home() {
               </div>
 
               <FadeInWhenVisible delay={0.2}>
-                <InfiniteMovingCards
-                  items={TESTIMONIALS}
-                  direction="right"
-                  speed="normal"
-                />
+                <div className="pb-4">
+                  <InfiniteMovingCards
+                    items={TESTIMONIALS}
+                    direction="right"
+                    speed="normal"
+                  />
+                </div>
               </FadeInWhenVisible>
             </div>
           </section>
