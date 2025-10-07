@@ -156,7 +156,7 @@ const EXPERIENCES = [
     dateRange: 'Nov 2024 - Apr 2025',
     highlights: [
       'Tech Stack: Typescript, React.js, Vue.js, C#.NET, Docker, AWS, Azure, GitLab.',
-      'Built the Property Acquisition and Disposal Record website for the Department of Transport and Main Roads (TMR).',
+      'Worked on modernising and optimising a large scale application for the Queensland Government.',
       'Deployment of the website to AWS ECS Fargate and setting up CI/CD on GitLab.',
       'Worked on PDF, word and excel file report generation using Gembox.',
     ],
