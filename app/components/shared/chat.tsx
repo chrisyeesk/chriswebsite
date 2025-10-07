@@ -182,7 +182,7 @@ export function Chat() {
           className="h-[315px] 2xl:h-[400px] flex-grow rounded-lg overflow-y-auto flex flex-col gap-4"
         >
           <li className="flex justify-end">
-            <div className="2xl:text-md mb-1 2xl:mb-1 2xl:py-5 2xl:px-7 rounded-xl 2xl:rounded-3xl py-3 px-5 bg-gray-600 text-sm text-white max-w-[71%] break-words">
+            <div className="2xl:text-md mb-1 2xl:mb-1 2xl:py-5 2xl:px-7 rounded-xl 2xl:rounded-3xl py-3 px-5 bg-yellow-400 text-sm text-black font-medium max-w-[71%] break-words">
               I am Chris&apos; AI assistant. Ask me anything about Chris&apos; educational
               background, experience, and skills.
             </div>
@@ -191,13 +191,13 @@ export function Chat() {
             <div key={index}>
               {m.role === 'user' ? (
                 <li key={m.id} className="flex justify-start">
-                  <div className="2xl:text-md 2xl:mb-1 2xl:py-5 2xl:px-7 mb-1 rounded-xl 2xl:rounded-3xl py-3 px-5 bg-gray-800 text-sm text-white max-w-[71%] break-words">
+                  <div className="2xl:text-md 2xl:mb-1 2xl:py-5 2xl:px-7 mb-1 rounded-xl 2xl:rounded-3xl py-3 px-5 bg-zinc-100 dark:bg-zinc-700 text-sm text-zinc-900 dark:text-white max-w-[71%] break-words">
                     {m.content}
                   </div>
                 </li>
               ) : (
                 <li key={m.id} className="flex justify-end">
-                  <div className="2xl:text-md 2xl:mb-1 2xl:py-5 2xl:px-7 mb-1 rounded-xl 2xl:rounded-3xl py-3 px-5 bg-gray-600 text-sm text-white max-w-[71%] break-words">
+                  <div className="2xl:text-md 2xl:mb-1 2xl:py-5 2xl:px-7 mb-1 rounded-xl 2xl:rounded-3xl py-3 px-5 bg-yellow-400 text-sm text-black font-medium max-w-[71%] break-words">
                     {m.content}
                   </div>
                 </li>
@@ -245,7 +245,7 @@ export function Chat() {
             <button
               disabled={!value}
               type="submit"
-              className="absolute right-2 top-1/2 z-50 -translate-y-1/2 h-8 w-8 2xl:h-10 2xl:w-10 rounded-full disabled:bg-gray-100 bg-black dark:bg-zinc-900 dark:disabled:bg-zinc-800 transition duration-200 flex items-center justify-center"
+              className="absolute right-2 top-1/2 z-50 -translate-y-1/2 h-8 w-8 2xl:h-10 2xl:w-10 rounded-full disabled:bg-zinc-200 dark:disabled:bg-zinc-600 bg-yellow-400 hover:bg-yellow-500 transition duration-200 flex items-center justify-center"
             >
               <motion.svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -257,7 +257,7 @@ export function Chat() {
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                className="text-gray-300 2xl:h-6 2xl:w-10 h-4 w-4"
+                className="text-black 2xl:h-6 2xl:w-10 h-4 w-4"
               >
                 <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                 <motion.path
@@ -300,7 +300,7 @@ export function Chat() {
                       duration: 0.3,
                       ease: 'linear',
                     }}
-                    className="dark:text-zinc-500 lg:text-sm 2xl:pl-5 text-sxl font-normal text-black pl-4 text-left w-[calc(100%-2rem)] truncate"
+                    className="dark:text-zinc-400 lg:text-sm 2xl:pl-5 text-sxl font-normal text-zinc-500 pl-4 text-left w-[calc(100%-2rem)] truncate"
                   >
                     {placeholders[currentPlaceholder]}
                   </motion.p>

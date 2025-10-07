@@ -8,6 +8,7 @@ export interface Project {
   title: string;
   description: string;
   image: string;
+  imageDark?: string;
   link: string;
   tech: string[];
 }
@@ -46,15 +47,18 @@ export function AppleTVProjects({
       // Calculate which project is active
       const descriptions = container.querySelectorAll('[data-project-index]');
       let newActiveProject = 0;
-      let foundCentered = false;
 
       descriptions.forEach((desc, index) => {
-        const rect = desc.getBoundingClientRect();
-        const descCenter = rect.top + rect.height / 2;
+        // Get the title element (h3) to check when it enters the viewport
+        const titleElement = desc.querySelector('h3');
+        const titleRect = titleElement?.getBoundingClientRect();
 
-        if (descCenter <= containerCenter && descCenter >= 0) {
-          newActiveProject = index;
-          foundCentered = true;
+        if (titleRect) {
+          // Change image when the title is visible at the bottom of the screen
+          // Title top should be less than window height (appearing from bottom)
+          if (titleRect.top < window.innerHeight && titleRect.bottom > 0) {
+            newActiveProject = index;
+          }
         }
       });
 
@@ -103,14 +107,14 @@ export function AppleTVProjects({
         <div
           className={`${
             imageFixed && !lastProjectScroll ? "fixed" : "absolute"
-          } right-0 w-1/2 h-screen flex items-center justify-center px-12`}
+          } -right-8 w-1/2 h-screen flex items-center justify-end pr-0`}
           style={{
             top: imageFixed && !lastProjectScroll ? "0" : lastProjectScroll ? "auto" : "0",
             bottom: lastProjectScroll ? "0" : "auto",
           }}
         >
           <motion.div
-            className="relative w-full aspect-[16/10] rounded-3xl overflow-hidden shadow-2xl"
+            className="relative w-full aspect-[16/10] border-[6px] border-zinc-800 dark:border-zinc-900 shadow-[8px_8px_24px_rgba(0,0,0,0.4)]"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
@@ -126,11 +130,19 @@ export function AppleTVProjects({
                 }}
                 transition={{ duration: 0.5 }}
               >
+                {/* Light mode image */}
                 <Image
                   src={project.image}
                   alt={project.title}
                   fill
-                  className="object-cover"
+                  className="object-cover dark:hidden"
+                />
+                {/* Dark mode image */}
+                <Image
+                  src={project.imageDark || project.image}
+                  alt={project.title}
+                  fill
+                  className="object-cover hidden dark:block"
                 />
               </motion.div>
             ))}
@@ -144,52 +156,36 @@ export function AppleTVProjects({
           <div
             key={project.title}
             data-project-index={index}
-            className="min-h-screen flex items-center py-20 px-6 lg:px-12"
+            className="min-h-screen flex items-center py-20 px-6 lg:px-20 xl:px-40"
           >
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: false, amount: 0.3 }}
-              className="max-w-xl"
-            >
+            <div className="max-w-xl">
               {/* Mobile Image */}
               <div className="lg:hidden mb-8 relative w-full aspect-[16/10] rounded-2xl overflow-hidden shadow-xl">
+                {/* Light mode image */}
                 <Image
                   src={project.image}
                   alt={project.title}
                   fill
-                  className="object-cover"
+                  className="object-cover dark:hidden"
+                />
+                {/* Dark mode image */}
+                <Image
+                  src={project.imageDark || project.image}
+                  alt={project.title}
+                  fill
+                  className="object-cover hidden dark:block"
                 />
               </div>
 
-              <motion.h3
-                className="text-4xl md:text-5xl font-light mb-6"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-                viewport={{ once: false }}
-              >
+              <h3 className="text-4xl md:text-5xl font-light mb-6">
                 {project.title}
-              </motion.h3>
+              </h3>
 
-              <motion.p
-                className="text-lg text-zinc-600 dark:text-zinc-400 mb-8 leading-relaxed"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.3 }}
-                viewport={{ once: false }}
-              >
+              <p className="text-lg text-zinc-600 dark:text-zinc-400 mb-8 leading-relaxed">
                 {project.description}
-              </motion.p>
+              </p>
 
-              <motion.div
-                className="flex flex-wrap gap-3 mb-8"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.4 }}
-                viewport={{ once: false }}
-              >
+              <div className="flex flex-wrap gap-3 mb-8">
                 {project.tech.map((tech) => (
                   <span
                     key={tech}
@@ -198,18 +194,14 @@ export function AppleTVProjects({
                     {tech}
                   </span>
                 ))}
-              </motion.div>
+              </div>
 
               {project.link !== "#" && (
-                <motion.a
+                <a
                   href={project.link}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-blue-600 dark:text-blue-400 hover:underline text-lg font-medium"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.5 }}
-                  viewport={{ once: false }}
                 >
                   View Project
                   <svg
@@ -225,9 +217,9 @@ export function AppleTVProjects({
                       d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
                     />
                   </svg>
-                </motion.a>
+                </a>
               )}
-            </motion.div>
+            </div>
           </div>
         ))}
       </div>

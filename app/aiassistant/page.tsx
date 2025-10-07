@@ -3,10 +3,23 @@
 import Link from 'next/link';
 import { ArrowLeft, Sun, Moon } from 'lucide-react';
 import { Chat } from './chat';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function AIAssistant() {
   const [isDarkMode, setIsDarkMode] = useState(false);
+
+  // Load theme from localStorage on mount
+  useEffect(() => {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+      setIsDarkMode(savedTheme === 'dark');
+    }
+  }, []);
+
+  // Save theme to localStorage when changed
+  useEffect(() => {
+    localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+  }, [isDarkMode]);
 
   return (
     <div className={`flex flex-col h-screen transition-all duration-700 ${

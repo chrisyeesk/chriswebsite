@@ -15,21 +15,15 @@ import {
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
-import {
   Sheet,
   SheetContent,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { Badge } from "@/components/ui/badge";
-import { Separator } from "@/components/ui/separator";
 import { AnimatedTestimonials } from "@/components/ui/animated-testimonials";
 import { AppleTVProjects } from "@/components/ui/apple-tv-projects";
 import Chatbot from "../components/shared/ChatBot";
+import { ShootingStars } from "@/components/ui/shooting-stars";
+import { StarsBackground } from "@/components/ui/stars-background";
 
 // Chris's Data
 const PROJECTS = [
@@ -37,29 +31,47 @@ const PROJECTS = [
     title: "AI Chatbot Assistant",
     description: "An AI chatbot built using Retrieval-Augmented-Generation (RAG) concept. Built with Next.js, TypeScript, LangChain, OpenAI API, and deployed to AWS EC2.",
     category: "AI PLATFORM",
-    image: "/chatbot.png",
-    link: "http://chris-assistant.com",
+    image: "/aiassistant_lightmode.png",
+    imageDark: "/aiassistant_darkmode.png",
+    link: "/aiassistant",
     tech: ["Next.js", "TypeScript", "LangChain", "OpenAI API", "AWS EC2"]
   },
   {
-    title: "Chris E-commerce",
-    description: "A modern e-commerce platform with clean design and smooth user experience. Features product catalog, shopping cart, and checkout functionality.",
-    category: "WEB APP",
-    image: "/ecommerce.png",
-    link: "https://chris-ecommerce.vercel.app",
-    tech: ["Next.js", "React", "Tailwind CSS", "Stripe"]
+    title: "Free Time Reward App",
+    description: "I developed this app for a teacher in Brisbane Central State School. This macOS/Windows app allows teachers to reward students with free time whenever they achieve something in class. I built it with Electron.js, Next.js, Framer Motion, and Three.js.",
+    category: "DESKTOP APP",
+    image: "/freetimerewardapp.png",
+    link: "https://www.youtube.com/watch?v=1gjnSAshsXg",
+    tech: ["Electron.js", "Next.js", "Framer Motion", "Three.js"]
   },
   {
-    title: "AT Service Center Agent",
-    description: "An intelligent service center agent system that helps customers with inquiries, appointments, and technical support using advanced AI capabilities.",
+    title: "AI Service Center Agent",
+    description: "A Service Center Voice Agent which can hold human-like conversation. It knows when to start and stop talking as the user speaks. Built using Next.js, Node.js, and OpenAI Realtime Voice. Originally deployed using Terraform + Helm to AWS EKS.",
     category: "AI PLATFORM",
-    image: "/service-center.png",
-    link: "#",
-    tech: ["AI/ML", "Natural Language Processing", "Customer Service", "Automation"]
+    image: "/servicecenter.png",
+    link: "https://www.linkedin.com/posts/chrisysk_nextjs-nodejs-aws-activity-7368480269848231938-b58n?utm_source=share&utm_medium=member_desktop&rcm=ACoAACstCU8B9wEno1HmuRyCtohVZflPRRz5pf0",
+    tech: ["Next.js", "Node.js", "OpenAI Realtime Voice", "Terraform", "Helm", "AWS EKS"]
+  },
+  {
+    title: "Pitch Fix",
+    description: "My first app deployed to the App Store. Pitch Fix helps you master pitch recognition. Built using React Native.",
+    category: "MOBILE APP",
+    image: "/Pitch Fix.png",
+    link: "https://lnkd.in/gGkRhEvs",
+    tech: ["React Native", "iOS", "App Store"]
+  },
+  {
+    title: "Personal Portfolio Website",
+    description: "My personal portfolio website showcasing my projects, skills, and experience. Features an AI assistant chatbot built using LangChain and OpenAI API. The domain was purchased through AWS Route 53 and deployed to AWS EC2 using nginx.",
+    category: "WEB APP",
+    image: "/portfolio_lightmode.png",
+    imageDark: "/portfolio_darkmode.png",
+    link: "https://www.chrisyeeshen.com",
+    tech: ["Next.js", "TypeScript", "Tailwind CSS", "Aceternity UI", "Framer Motion", "Shadcn", "LangChain", "OpenAI API", "AWS Route 53", "AWS EC2", "nginx"]
   },
   {
     title: "Basketball Team Management",
-    description: "Full-stack application for managing basketball team operations including player statistics, game scheduling, and team communication.",
+    description: "Full-stack application for a basketball team in Australia. It helps the team to manage learning materials and provide online training to their players.",
     category: "WEB APP",
     image: "/basketball.png",
     link: "#",
@@ -68,10 +80,12 @@ const PROJECTS = [
 ];
 
 const TECH_STACK = [
-  { name: "Next.js", url: "https://nextjs.org/", img: "/tech stack/nextjs.png" },
+  { name: "Next.js", url: "https://nextjs.org/", img: "/tech stack/next.png" },
   { name: "React", url: "https://reactjs.org/", img: "/tech stack/react.webp" },
   { name: "Tailwind CSS", url: "https://tailwindcss.com/", img: "/tech stack/tailwind.png" },
   { name: "C#", url: "https://learn.microsoft.com/en-us/dotnet/csharp/tour-of-csharp/", img: "/tech stack/csharp.png" },
+  { name: "Python", url: "https://www.python.org/", img: "/tech stack/python.png" },
+  { name: "Sitecore", url: "https://www.sitecore.com/", img: "/tech stack/sitecore.png" },
   { name: "Azure", url: "https://azure.microsoft.com/", img: "/azure.png" },
   { name: "AWS", url: "https://aws.amazon.com/", img: "/tech stack/aws.png" },
   { name: "Node.js", url: "https://nodejs.org/", img: "/tech stack/node.png" },
@@ -218,7 +232,17 @@ export default function Portfolio2() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isLastProjectScrolling, setIsLastProjectScrolling] = useState(false);
 
+  // Load theme from localStorage on mount
   useEffect(() => {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+      setIsDarkMode(savedTheme === 'dark');
+    }
+  }, []);
+
+  // Save theme to localStorage and apply to document
+  useEffect(() => {
+    localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
     if (isDarkMode) {
       document.documentElement.classList.add("dark");
     } else {
@@ -234,29 +258,6 @@ export default function Portfolio2() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  const faqs = [
-    {
-      question: "What technologies do you specialize in?",
-      answer:
-        "I specialize in Next.js, React, TypeScript, Tailwind CSS, C#.NET, AWS, Azure, Docker, and AI technologies like LangChain and OpenAI API.",
-    },
-    {
-      question: "What type of projects do you work on?",
-      answer:
-        "I work on full-stack web applications, AI chatbots, e-commerce platforms, and enterprise-level solutions for companies across various industries.",
-    },
-    {
-      question: "Do you have cloud deployment experience?",
-      answer:
-        "Yes, I have extensive experience deploying applications to AWS (EC2, ECS Fargate) and Azure, with CI/CD pipelines using GitHub Actions and GitLab.",
-    },
-    {
-      question: "What is your professional background?",
-      answer:
-        "I'm currently a Digital Full Stack Developer at RACQ with previous experience at Working Mouse, State Library of Queensland, and Sindy Labs. I hold an AWS Certified Developer - Associate certificate.",
-    },
-  ];
 
   return (
     <div className={`min-h-screen ${isDarkMode ? "dark" : ""}`}>
@@ -275,14 +276,14 @@ export default function Portfolio2() {
             }`}>
               <div className={`relative flex flex-wrap items-center justify-between gap-6 transition-all duration-300 lg:gap-0 ${
                 isScrolled
-                  ? "py-2 lg:py-3 bg-white/80 dark:bg-zinc-900/80 backdrop-blur-md rounded-md border border-zinc-200/50 dark:border-zinc-800/50 shadow-lg px-6"
+                  ? "py-2 lg:py-3 bg-white/50 dark:bg-zinc-900/50 backdrop-blur-md rounded-md border border-zinc-200/50 dark:border-zinc-800/50 shadow-lg px-6"
                   : "py-3 lg:py-4"
               }`}>
                 {/* Logo */}
                 <div className="flex w-full justify-between lg:w-auto">
                   <a href="#" className="flex items-center space-x-2">
                     <div className="flex items-center gap-2">
-                      <div className="h-8 w-8 rounded-full bg-gradient-to-br from-purple-600 to-blue-500 flex items-center justify-center text-white font-bold">
+                      <div className="h-8 w-8 rounded-full bg-gradient-to-br from-purple-600 to-blue-500 dark:from-purple-400 dark:to-blue-400 flex items-center justify-center text-white font-bold">
                         C
                       </div>
                       <span className="font-bold text-lg tracking-tight">
@@ -350,14 +351,27 @@ export default function Portfolio2() {
         {/* Main Content */}
         <main className="overflow-hidden">
           {/* Hero Section */}
-          <section id="about" className="min-h-screen flex items-center">
-            <div className="relative pt-24 md:pt-36 pb-16 md:pb-24 w-full">
-              <div className="absolute inset-0 top-56 -z-20 lg:top-32 [mask-image:linear-gradient(to_bottom,transparent_35%,black_90%)]">
-                <div className="hidden dark:block size-full">
-                  <div className="w-full h-full bg-gradient-to-b from-zinc-900 via-zinc-950 to-zinc-950" />
-                </div>
-              </div>
-              <div className="absolute inset-0 -z-10 size-full [background:radial-gradient(125%_125%_at_50%_100%,transparent_0%,rgb(255_255_255_/_1)_75%)] dark:[background:radial-gradient(125%_125%_at_50%_100%,transparent_0%,rgb(9_9_11_/_1)_75%)]"></div>
+          <section id="about" className="min-h-screen flex items-center relative overflow-hidden bg-white dark:bg-gradient-to-tr dark:from-zinc-900 dark:via-zinc-950 dark:to-black">
+            {/* Shooting Stars and Stars Background - Dark Mode Only */}
+            <div className="hidden dark:block absolute inset-0 z-0 opacity-20">
+              <ShootingStars
+                minSpeed={10}
+                maxSpeed={30}
+                minDelay={1200}
+                maxDelay={4200}
+                starColor="#9E00FF"
+                trailColor="#2EB9DF"
+              />
+              <StarsBackground
+                starDensity={0.00015}
+                allStarsTwinkle={true}
+                twinkleProbability={0.7}
+                minTwinkleSpeed={0.5}
+                maxTwinkleSpeed={1}
+              />
+            </div>
+
+            <div className="relative z-10 pt-24 md:pt-36 pb-16 md:pb-24 w-full">
 
               <div className="mx-auto max-w-7xl px-6">
                 <div className="text-center sm:mx-auto lg:mr-auto lg:mt-0">
@@ -413,7 +427,7 @@ export default function Portfolio2() {
                   <FadeInWhenVisible delay={0.4}>
                     <p className="mx-auto mt-8 max-w-2xl text-balance text-lg text-zinc-600 dark:text-zinc-400">
                       I am a software engineer focused on building, deploying and testing full-stack web applications.
-                      I use the latest technologies like Framer Motion, Next.js, OpenAI API and Langchain to build stunning and futuristic web applications.
+                      I use the latest technologies like Framer Motion, Next.js, C#, OpenAI technologies to build stunning and futuristic web applications.
                     </p>
                   </FadeInWhenVisible>
 
@@ -471,7 +485,7 @@ export default function Portfolio2() {
               <div className="max-w-4xl mx-auto space-y-6">
                 {EXPERIENCES.map((exp, index) => (
                   <FadeInWhenVisible key={index} delay={index * 0.1}>
-                    <Card className="bg-white dark:bg-zinc-950 border dark:border-zinc-800 hover:bg-zinc-50 dark:hover:bg-zinc-900 transition-colors duration-300">
+                    <Card className="bg-white dark:bg-zinc-950 border dark:border-zinc-800 hover:border-yellow-400 dark:hover:border-yellow-400 hover:bg-zinc-200 dark:hover:bg-zinc-900 transition-all duration-300">
                       <CardContent className="p-6">
                         <div className="flex items-start gap-4 mb-4">
                           <Image
@@ -534,7 +548,7 @@ export default function Portfolio2() {
                 </FadeInWhenVisible>
               </div>
 
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+              <div className="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
                 {TECH_STACK.map((tech, index) => (
                   <FadeInWhenVisible key={index} delay={index * 0.1}>
                     <a
@@ -543,16 +557,18 @@ export default function Portfolio2() {
                       rel="noopener noreferrer"
                       className="group"
                     >
-                      <Card className="bg-white dark:bg-zinc-950 border dark:border-zinc-800 hover:border-yellow-400 dark:hover:border-yellow-400 transition-all duration-300 hover:scale-105">
-                        <CardContent className="p-6 flex items-center justify-center">
-                          <Image
-                            src={tech.img}
-                            alt={tech.name}
-                            width={80}
-                            height={80}
-                            className="transition-transform duration-300 group-hover:scale-110"
-                            unoptimized
-                          />
+                      <Card className="bg-white dark:bg-zinc-800 border dark:border-zinc-700 hover:border-yellow-400 dark:hover:border-yellow-400 transition-all duration-300 hover:scale-105 h-full">
+                        <CardContent className="p-3 md:p-6 flex items-center justify-center aspect-square">
+                          <div className="relative w-12 h-12 md:w-20 md:h-20 flex items-center justify-center">
+                            <Image
+                              src={tech.img}
+                              alt={tech.name}
+                              width={80}
+                              height={80}
+                              className="transition-transform duration-300 group-hover:scale-110 object-contain"
+                              unoptimized
+                            />
+                          </div>
                         </CardContent>
                       </Card>
                     </a>
@@ -637,59 +653,58 @@ export default function Portfolio2() {
             </div>
           </section>
 
-          {/* FAQ Section */}
-          <section id="contact" className="bg-zinc-100 dark:bg-zinc-900 py-16 md:py-32">
-            <div className="mx-auto max-w-4xl px-6">
+          {/* Contact Section */}
+          <section id="contact" className="bg-white dark:bg-zinc-950 py-16 md:py-32">
+            <div className="mx-auto max-w-7xl px-6">
               <div className="text-center mb-16">
                 <FadeInWhenVisible>
                   <h2 className="mx-auto max-w-4xl text-balance text-4xl font-light md:text-5xl lg:text-6xl mb-8">
-                    Frequently Asked Questions
+                    Contact
                   </h2>
                 </FadeInWhenVisible>
               </div>
 
-              <FadeInWhenVisible>
-                <Accordion type="single" collapsible className="w-full space-y-4">
-                  {faqs.map((faq, index) => (
-                    <AccordionItem
-                      key={index}
-                      value={`item-${index}`}
-                      className="border dark:border-zinc-800 rounded-xl overflow-hidden bg-white dark:bg-zinc-950 px-6"
+              <FadeInWhenVisible delay={0.2}>
+                <div className="flex flex-col md:flex-row justify-center items-center gap-6 md:gap-8 text-lg md:text-xl">
+                  <div>
+                    <a
+                      href="https://drive.google.com/file/d/1Umz-YJzUVZp7IW_Kvm0QDCn9B_qIDsg9/view?usp=sharing"
+                      className="font-bold bg-clip-text text-transparent bg-gradient-to-br from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 transition-all"
+                      target="_blank"
+                      rel="noopener noreferrer"
                     >
-                      <AccordionTrigger className="text-left font-semibold text-lg hover:no-underline py-5">
-                        {faq.question}
-                      </AccordionTrigger>
-                      <AccordionContent className="text-zinc-600 dark:text-zinc-400 pb-5">
-                        {faq.answer}
-                      </AccordionContent>
-                    </AccordionItem>
-                  ))}
-                </Accordion>
-              </FadeInWhenVisible>
-            </div>
-          </section>
-
-          {/* Footer */}
-          <section className="bg-white dark:bg-zinc-950 py-16">
-            <div className="mx-auto max-w-7xl px-6">
-              <div className="text-center">
-                <FadeInWhenVisible>
-                  <h2 className="text-3xl md:text-4xl font-semibold mb-4">
-                    Let&apos;s Work Together
-                  </h2>
-                  <p className="text-zinc-600 dark:text-zinc-400 text-lg mb-8">
-                    Interested in collaborating? Feel free to reach out!
-                  </p>
-                  <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                    <Button asChild size="lg" className="bg-yellow-400 hover:bg-yellow-500 text-black font-semibold rounded-xl">
-                      <Link href="/">Back to Main Site</Link>
-                    </Button>
-                    <Button asChild variant="outline" size="lg" className="rounded-xl">
-                      <Link href="/portfolio">View Original Portfolio</Link>
-                    </Button>
+                      My CV
+                    </a>
                   </div>
-                </FadeInWhenVisible>
-              </div>
+                  <div>
+                    <a
+                      href="https://www.linkedin.com/in/chrisysk/"
+                      className="font-bold bg-clip-text text-transparent bg-gradient-to-br from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 transition-all"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      LinkedIn
+                    </a>
+                  </div>
+                  <div className="text-zinc-700 dark:text-zinc-300">0448581566</div>
+                  <div className="text-zinc-700 dark:text-zinc-300">chrisyeesk@gmail.com</div>
+                </div>
+              </FadeInWhenVisible>
+
+              <FadeInWhenVisible delay={0.4}>
+                <div className="flex justify-center mt-12">
+                  <Button
+                    size="lg"
+                    className="bg-yellow-400 hover:bg-yellow-500 text-black font-semibold rounded-xl"
+                    onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-2">
+                      <path d="m18 15-6-6-6 6"/>
+                    </svg>
+                    Back to Top
+                  </Button>
+                </div>
+              </FadeInWhenVisible>
             </div>
           </section>
         </main>

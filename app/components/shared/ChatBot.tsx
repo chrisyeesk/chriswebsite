@@ -7,7 +7,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 const ChatCloud = () => {
   return (
     <motion.div
-      className="fixed 2xl:text-xl 2xl:w-[360px] 2xl:h-[100px] 2xl:pt-5 2xl:px-5 2xl:right-[132px] 2xl:bottom-[138px] right-[73px] bottom-[100px] bg-white w-56 border border-gray-300 shadow-lg rounded-lg p-4 z-50"
+      className="fixed 2xl:text-md 2xl:w-[280px] 2xl:h-[75px] 2xl:pt-3 2xl:px-3 2xl:right-[125px] 2xl:bottom-[125px] right-[73px] bottom-[100px] bg-gray-800 w-56 border border-gray-300 shadow-lg rounded-lg p-4 z-50"
       initial={{ opacity: 0, x: 20 }}
       animate={{ opacity: 1, x: 0 }}
       exit={{ opacity: 0, x: 20 }}
@@ -73,9 +73,9 @@ const Chatbot = () => {
         >
           <button
             onClick={handleChatClose}
-            className="self-end rounded-full focus:outline-none"
+            className="self-end rounded-full focus:outline-none text-zinc-900 dark:text-white hover:text-zinc-600 dark:hover:text-zinc-300 transition-colors"
           >
-            <X className="2xl:w-10 2xl:h-6 2xl:mb-2"/>
+            <X className="2xl:w-10 2xl:h-6 2xl:mb-2 w-6 h-6"/>
           </button>
           <div className="flex-1 mt-2">
             <Chat />
@@ -87,9 +87,9 @@ const Chatbot = () => {
       {!buttonDisabled && (
         <motion.button
           onClick={handleChatOpen}
-          className="fixed bottom-12 right-7 bg-gradient-to-br from-purple-500 to-pink-500 transform transition-transform duration-300 hover:-translate-y-1 text-white p-4 rounded-full shadow-lg focus:outline-none z-50 block 2xl:hidden"
+          className="fixed bottom-12 right-7 bg-gradient-to-br from-purple-500 to-pink-500 transform transition-transform duration-300 hover:-translate-y-1 text-white p-3 rounded-full shadow-lg focus:outline-none z-50 block 2xl:hidden"
         >
-          <MessageCircle size={32} strokeWidth={3} absoluteStrokeWidth />
+          <MessageCircle size={24} strokeWidth={3} absoluteStrokeWidth />
         </motion.button>
       )}
 
@@ -97,9 +97,9 @@ const Chatbot = () => {
       {!buttonDisabled && (
         <motion.button
           onClick={handleChatOpen}
-          className="fixed bottom-20 right-20 bg-gradient-to-br from-purple-500 to-pink-500 transform transition-transform duration-300 hover:-translate-y-1 text-white p-5 rounded-full shadow-lg focus:outline-none z-50 hidden 2xl:block"
+          className="fixed bottom-20 right-20 bg-gradient-to-br from-purple-500 to-pink-500 transform transition-transform duration-300 hover:-translate-y-1 text-white p-4 rounded-full shadow-lg focus:outline-none z-50 hidden 2xl:block"
         >
-          <MessageCircle size={35} strokeWidth={5} absoluteStrokeWidth />
+          <MessageCircle size={28} strokeWidth={5} absoluteStrokeWidth />
         </motion.button>
       )}
 

@@ -87,12 +87,23 @@ const config = {
   				to: {
   					height: '0'
   				}
+  			},
+  			'shooting-star': {
+  				'0%': {
+  					transform: 'translateX(0) translateY(0) scale(1)',
+  					opacity: '1'
+  				},
+  				'100%': {
+  					transform: 'translateX(300px) translateY(300px) scale(0)',
+  					opacity: '0'
+  				}
   			}
   		},
   		animation: {
   			'accordion-down': 'accordion-down 0.2s ease-out',
   			'accordion-up': 'accordion-up 0.2s ease-out',
-  			scroll: 'scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite'
+  			scroll: 'scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite',
+  			'shooting-star': 'shooting-star 1s ease-out forwards'
   		},
   		fontFamily: {
   			roboto: [
