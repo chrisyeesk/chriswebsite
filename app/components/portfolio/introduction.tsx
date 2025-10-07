@@ -1,11 +1,11 @@
 'use client';
 import React from 'react';
-import localFont from 'next/font/local';
+// import localFont from 'next/font/local';
 import { LinkPreview } from '@/components/ui/link-preview';
 import { useSectionInView } from '@/lib/hooks';
 import { motion } from 'framer-motion';
 
-const playwrite = localFont({ src: '../../components/font/playwrite.woff2' });
+// const playwrite = localFont({ src: '../../components/font/playwrite.woff2' });
 
 const Introduction = () => {
   const { ref } = useSectionInView('Home');
@@ -25,10 +25,10 @@ const Introduction = () => {
         transition={{ duration: 0.8, delay: 0.2 }}
         className="text-6xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:mb-14 2xl:text-[7rem]"
       >
-        <div className={`${playwrite.className} mt-24 2xl:mt-2 mb-1 bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent`}>
+        <div className="mt-24 2xl:mt-2 mb-1 bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent">
           Chris&apos;
         </div>
-        <div className={`${playwrite.className} mb-14 md:mb-12 lg:mb-20 2xl:mb-10 bg-gradient-to-r from-purple-600 via-pink-600 to-red-600 bg-clip-text text-transparent`}>
+        <div className="mb-14 md:mb-12 lg:mb-20 2xl:mb-10 bg-gradient-to-r from-purple-600 via-pink-600 to-red-600 bg-clip-text text-transparent">
           Portfolio
         </div>
       </motion.div>
