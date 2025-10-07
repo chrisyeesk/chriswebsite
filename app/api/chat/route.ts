@@ -8,7 +8,6 @@ import { PromptTemplate } from '@langchain/core/prompts';
 import { HttpResponseOutputParser } from 'langchain/output_parsers';
 
 import { PDFLoader } from '@langchain/community/document_loaders/fs/pdf';
-import { RunnablePassthrough } from '@langchain/core/runnables';
 import { formatDocumentsAsString } from 'langchain/util/document';
 
 const loader = new PDFLoader('data/resume.pdf');
@@ -58,17 +57,13 @@ export async function POST(req: Request) {
      */
     const parser = new HttpResponseOutputParser();
 
-    const chain = RunnablePassthrough.assign({
-      context: () => formatDocumentsAsString(docs),
-    })
-      .pipe(prompt)
-      .pipe(model)
-      .pipe(parser);
+    const chain = prompt.pipe(model).pipe(parser);
 
     // Convert the response into a friendly text-stream
     const stream = await chain.stream({
       chat_history: formattedPreviousMessages.join('\n'),
       question: currentMessageContent,
+      context: formatDocumentsAsString(docs),
     });
 
     // Respond with the stream
