@@ -116,7 +116,6 @@ const config = {
     addVariablesForColors,
     require('tailwindcss-animate'),
     fluid,
-    require('@tailwindcss/aspect-ratio'),
   ],
 } satisfies Config;
 
