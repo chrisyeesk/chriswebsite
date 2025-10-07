@@ -8,9 +8,8 @@ import { PromptTemplate } from '@langchain/core/prompts';
 import { HttpResponseOutputParser } from 'langchain/output_parsers';
 
 import { PDFLoader } from '@langchain/community/document_loaders/fs/pdf';
-import { RunnableSequence } from '@langchain/core/runnables';
+import { RunnablePassthrough } from '@langchain/core/runnables';
 import { formatDocumentsAsString } from 'langchain/util/document';
-import { CharacterTextSplitter } from 'langchain/text_splitter';
 
 const loader = new PDFLoader('data/resume.pdf');
 export const dynamic = 'force-dynamic';
@@ -59,16 +58,12 @@ export async function POST(req: Request) {
      */
     const parser = new HttpResponseOutputParser();
 
-    const chain = RunnableSequence.from([
-      {
-        question: (input: any) => input.question,
-        chat_history: (input: any) => input.chat_history,
-        context: () => formatDocumentsAsString(docs),
-      },
-      prompt,
-      model,
-      parser,
-    ] as const);
+    const chain = RunnablePassthrough.assign({
+      context: () => formatDocumentsAsString(docs),
+    })
+      .pipe(prompt)
+      .pipe(model)
+      .pipe(parser);
 
     // Convert the response into a friendly text-stream
     const stream = await chain.stream({

@@ -273,8 +273,8 @@ export function Chat({ isDarkMode = false }: { isDarkMode?: boolean }) {
           <div className="flex-1">
             <Textarea
               className={`min-h-[60px] max-h-[120px] rounded-xl border-0 shadow-lg backdrop-blur-sm transition-all duration-300 resize-none ${
-                isDarkMode 
-                  ? 'bg-gray-800/70 text-white placeholder:text-gray-400 focus:ring-2 focus:ring-blue-500/50' 
+                isDarkMode
+                  ? 'bg-gray-800/70 text-blue-200 placeholder:text-gray-400 focus:ring-2 focus:ring-blue-500/50'
                   : 'bg-white/80 text-gray-800 placeholder:text-gray-500 focus:ring-2 focus:ring-blue-500/50'
               }`}
               value={input}
