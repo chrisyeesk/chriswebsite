@@ -74,3 +74,92 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Custom Animations for Portfolio2 */
+@keyframes aurora {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes shiny-text {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+.animate-aurora {
+  animation: aurora 10s ease infinite;
+}
+
+.animate-shimmer {
+  animation: shimmer 3s linear infinite;
+}
+
+.animate-shiny-text {
+  animation: shiny-text 1s cubic-bezier(0.6, 0.6, 0, 1) infinite;
+  background-size: var(--shiny-width, 100px) 100%;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+}
+
+/* Mask utilities */
+.mask-b-from-35\% {
+  -webkit-mask-image: linear-gradient(to bottom, transparent 35%, black 90%);
+  mask-image: linear-gradient(to bottom, transparent 35%, black 90%);
+}
+
+.mask-b-from-55\% {
+  -webkit-mask-image: linear-gradient(to bottom, transparent 55%, black);
+  mask-image: linear-gradient(to bottom, transparent 55%, black);
+}
+
+/* Shadow utilities */
+.inset-shadow-2xs {
+  box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.dark .inset-shadow-white\/20 {
+  box-shadow: inset 0 1px 2px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* Height utilities */
+.h-10\.5 {
+  height: 2.625rem;
+}
+
+.h-320 {
+  height: 80rem;
+}
+
+.w-140 {
+  width: 35rem;
+}
+
+/* Translation utilities */
+.-translate-y-87\.5 {
+  transform: translateY(-21.875rem);
+}
+
+/* Contain utility */
+.contain-strict {
+  contain: strict;
+}
