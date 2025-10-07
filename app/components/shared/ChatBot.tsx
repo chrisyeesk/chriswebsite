@@ -7,13 +7,13 @@ import { motion, AnimatePresence } from 'framer-motion';
 const ChatCloud = () => {
   return (
     <motion.div
-      className="fixed 2xl:text-md 2xl:w-[280px] 2xl:h-[75px] 2xl:pt-3 2xl:px-3 2xl:right-[125px] 2xl:bottom-[125px] right-[73px] bottom-[100px] bg-gray-800 w-56 border border-gray-300 shadow-lg rounded-lg p-4 z-50"
+      className="fixed 2xl:text-md 2xl:w-[280px] 2xl:h-[75px] 2xl:pt-3 2xl:px-3 2xl:right-[125px] 2xl:bottom-[125px] right-[65px] bottom-[80px] bg-white dark:bg-zinc-900 w-56 border border-zinc-200 dark:border-zinc-800 shadow-lg rounded-lg p-4 z-50"
       initial={{ opacity: 0, x: 20 }}
       animate={{ opacity: 1, x: 0 }}
       exit={{ opacity: 0, x: 20 }}
       transition={{ duration: 0.3 }}
     >
-      <p>Chat with my AI chatbot to know more about me!</p>
+      <p className="text-zinc-900 dark:text-white">Chat with my AI chatbot to know more about me!</p>
     </motion.div>
   );
 };

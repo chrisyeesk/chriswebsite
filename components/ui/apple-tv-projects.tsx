@@ -126,7 +126,6 @@ export function AppleTVProjects({
                 initial={{ opacity: 0 }}
                 animate={{
                   opacity: activeProject === index ? 1 : 0,
-                  scale: activeProject === index ? 1 : 0.95,
                 }}
                 transition={{ duration: 0.5 }}
               >
