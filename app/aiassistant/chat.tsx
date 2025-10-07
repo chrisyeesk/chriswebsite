@@ -170,21 +170,21 @@ export function Chat({ isDarkMode = false }: { isDarkMode?: boolean }) {
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   onClick={() =>
-                    handleClickQuestion('What did Chris Study at University?')
+                    handleClickQuestion('What is Chris working on at RACQ?')
                   }
                   className={`p-4 rounded-xl cursor-pointer transition-all duration-300 backdrop-blur-sm border shadow-lg hover:shadow-xl ${
-                    isDarkMode 
-                      ? 'border-gray-700/50 bg-gray-800/70 hover:bg-gray-700/70' 
+                    isDarkMode
+                      ? 'border-gray-700/50 bg-gray-800/70 hover:bg-gray-700/70'
                       : 'border-gray-200/50 bg-white/80 hover:bg-gray-50/80'
                   }`}
                 >
                   <div className={`font-semibold mb-2 transition-colors duration-300 ${
                     isDarkMode ? 'text-blue-400' : 'text-blue-600'
-                  }`}>💡 Study Background</div>
+                  }`}>🏢 Current Role</div>
                   <div className={`text-sm transition-colors duration-300 ${
                     isDarkMode ? 'text-gray-300' : 'text-gray-700'
                   }`}>
-                    What did Chris Study at University?
+                    What is Chris working on at RACQ?
                   </div>
                 </motion.div>
                 <motion.div
@@ -192,22 +192,22 @@ export function Chat({ isDarkMode = false }: { isDarkMode?: boolean }) {
                   whileTap={{ scale: 0.98 }}
                   onClick={() =>
                     handleClickQuestion(
-                      'What programming language is Chris proficient in?'
+                      'What AWS and Azure services does Chris have experience with?'
                     )
                   }
                   className={`p-4 rounded-xl cursor-pointer transition-all duration-300 backdrop-blur-sm border shadow-lg hover:shadow-xl ${
-                    isDarkMode 
-                      ? 'border-gray-700/50 bg-gray-800/70 hover:bg-gray-700/70' 
+                    isDarkMode
+                      ? 'border-gray-700/50 bg-gray-800/70 hover:bg-gray-700/70'
                       : 'border-gray-200/50 bg-white/80 hover:bg-gray-50/80'
                   }`}
                 >
                   <div className={`font-semibold mb-2 transition-colors duration-300 ${
                     isDarkMode ? 'text-green-400' : 'text-green-600'
-                  }`}>💻 Technical Skills</div>
+                  }`}>☁️ Cloud Skills</div>
                   <div className={`text-sm transition-colors duration-300 ${
                     isDarkMode ? 'text-gray-300' : 'text-gray-700'
                   }`}>
-                    What programming language is Chris proficient in?
+                    What AWS and Azure services does Chris have experience with?
                   </div>
                 </motion.div>
               </motion.section>
@@ -217,22 +217,22 @@ export function Chat({ isDarkMode = false }: { isDarkMode?: boolean }) {
                   whileTap={{ scale: 0.98 }}
                   onClick={() =>
                     handleClickQuestion(
-                      'What did Chris Learn in his software engineering internship at Sincidium?'
+                      'What did Chris build at State Library of Queensland?'
                     )
                   }
                   className={`p-4 rounded-xl cursor-pointer transition-all duration-300 backdrop-blur-sm border shadow-lg hover:shadow-xl ${
-                    isDarkMode 
-                      ? 'border-gray-700/50 bg-gray-800/70 hover:bg-gray-700/70' 
+                    isDarkMode
+                      ? 'border-gray-700/50 bg-gray-800/70 hover:bg-gray-700/70'
                       : 'border-gray-200/50 bg-white/80 hover:bg-gray-50/80'
                   }`}
                 >
                   <div className={`font-semibold mb-2 transition-colors duration-300 ${
                     isDarkMode ? 'text-purple-400' : 'text-purple-600'
-                  }`}>🏢 Work Experience</div>
+                  }`}>🏛️ Government Projects</div>
                   <div className={`text-sm transition-colors duration-300 ${
                     isDarkMode ? 'text-gray-300' : 'text-gray-700'
                   }`}>
-                    What did Chris Learn in his software engineering internship at Sincidium?
+                    What did Chris build at State Library of Queensland?
                   </div>
                 </motion.div>
                 <motion.div
@@ -240,22 +240,22 @@ export function Chat({ isDarkMode = false }: { isDarkMode?: boolean }) {
                   whileTap={{ scale: 0.98 }}
                   onClick={() =>
                     handleClickQuestion(
-                      'What did Chris Learn during his internship as a frontend developer at Webby Group?'
+                      'What certifications does Chris have?'
                     )
                   }
                   className={`p-4 rounded-xl cursor-pointer transition-all duration-300 backdrop-blur-sm border shadow-lg hover:shadow-xl ${
-                    isDarkMode 
-                      ? 'border-gray-700/50 bg-gray-800/70 hover:bg-gray-700/70' 
+                    isDarkMode
+                      ? 'border-gray-700/50 bg-gray-800/70 hover:bg-gray-700/70'
                       : 'border-gray-200/50 bg-white/80 hover:bg-gray-50/80'
                   }`}
                 >
                   <div className={`font-semibold mb-2 transition-colors duration-300 ${
                     isDarkMode ? 'text-orange-400' : 'text-orange-600'
-                  }`}>🎨 Frontend Development</div>
+                  }`}>🎓 Certifications</div>
                   <div className={`text-sm transition-colors duration-300 ${
                     isDarkMode ? 'text-gray-300' : 'text-gray-700'
                   }`}>
-                    What did Chris Learn during his internship as a frontend developer at Webby Group?
+                    What certifications does Chris have?
                   </div>
                 </motion.div>
               </motion.section>
