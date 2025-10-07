@@ -602,25 +602,6 @@ export default function Home() {
                   <h2 className="mx-auto max-w-4xl text-balance text-4xl font-light md:text-5xl lg:text-6xl relative z-10">
                     Featured Projects
                   </h2>
-                  {/* Lamp light spotlight effect */}
-                  <div className="absolute left-1/2 top-full mt-12 -translate-x-1/2 pointer-events-none overflow-visible">
-                    {/* Light beam cone */}
-                    <div className="absolute top-0 left-1/2 -translate-x-1/2"
-                         style={{
-                           width: '500px',
-                           height: '150px',
-                           background: 'linear-gradient(180deg, rgba(250,204,21,0.12) 0%, rgba(250,204,21,0.06) 40%, rgba(250,204,21,0.02) 70%, transparent 100%)',
-                           clipPath: 'polygon(35% 0%, 65% 0%, 100% 100%, 0% 100%)',
-                           filter: 'blur(50px)'
-                         }}>
-                    </div>
-                    {/* Additional glow */}
-                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[120px] bg-yellow-400/5 blur-[70px]"
-                         style={{
-                           clipPath: 'polygon(40% 0%, 60% 0%, 90% 100%, 10% 100%)'
-                         }}>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
