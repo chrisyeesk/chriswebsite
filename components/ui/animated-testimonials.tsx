@@ -2,7 +2,7 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { ChevronLeft, ChevronRight, Play, Pause } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -28,12 +28,12 @@ export function AnimatedTestimonials({
     testimonials.map(() => Math.floor(Math.random() * 21) - 10)
   );
 
-  const handleNext = () => {
+  const handleNext = useCallback(() => {
     setActive((prev) => (prev + 1) % testimonials.length);
     if (isPlaying && !hasStartedPlaying) {
       setHasStartedPlaying(true);
     }
-  };
+  }, [testimonials.length, isPlaying, hasStartedPlaying]);
 
   const handlePrev = () => {
     setActive((prev) => (prev - 1 + testimonials.length) % testimonials.length);
@@ -47,7 +47,7 @@ export function AnimatedTestimonials({
     if (!isPlaying) return;
     const interval = setInterval(handleNext, 5000);
     return () => clearInterval(interval);
-  }, [isPlaying, active]);
+  }, [isPlaying, handleNext]);
 
   const randomRotateY = () => {
     return Math.floor(Math.random() * 21) - 10;
